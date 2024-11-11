@@ -1,0 +1,9 @@
+0.6
+2019.1
+May 24 2019
+14:51:52
+/home/nsh1/NSH/cx203/lab1_task1/Lab1_task1.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+/home/nsh1/NSH/cx203/lab1_task1/Lab1_task1.srcs/sim_1/new/tb_fulladder.sv,1731322830,systemVerilog,,,,tb_fulladder,,,,,,,,
+/home/nsh1/NSH/cx203/lab1_task1/Lab1_task1.srcs/sim_1/new/tb_halfadder.sv,1731321176,systemVerilog,,,,tb_halfadder,,,,,,,,
+/home/nsh1/NSH/cx203/lab1_task1/Lab1_task1.srcs/sources_1/new/fulladder.sv,1731322794,systemVerilog,,/home/nsh1/NSH/cx203/lab1_task1/Lab1_task1.srcs/sources_1/new/halfadder.sv,,fulladder,,,,,,,,
+/home/nsh1/NSH/cx203/lab1_task1/Lab1_task1.srcs/sources_1/new/halfadder.sv,1731320849,systemVerilog,,/home/nsh1/NSH/cx203/lab1_task1/Lab1_task1.srcs/sim_1/new/tb_fulladder.sv,,halfadder,,,,,,,,
