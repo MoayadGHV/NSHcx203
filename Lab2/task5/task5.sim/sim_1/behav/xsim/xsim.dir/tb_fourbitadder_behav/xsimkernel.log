@@ -1,0 +1,4 @@
+Running: xsim.dir/tb_fourbitadder_behav/xsimk -simmode gui -wdb tb_fourbitadder_behav.wdb -simrunnum 0 -socket 52259
+Design successfully loaded
+Design Loading Memory Usage: 33016 KB (Peak: 33580 KB)
+Design Loading CPU Usage: 30 ms

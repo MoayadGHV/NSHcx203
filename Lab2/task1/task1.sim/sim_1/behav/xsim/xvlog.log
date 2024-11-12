@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nsh1/NSHcx203/lab1_task1/Lab1_task1.srcs/sources_1/new/and4gate.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module and4gate
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nsh1/NSHcx203/lab1_task1/Lab1_task1.srcs/sources_1/new/andgate.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module andgate
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nsh1/NSHcx203/lab1_task1/Lab1_task1.srcs/sim_1/new/tb_andgate.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_andgate
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nsh1/lab2_t1/lab2_t1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
