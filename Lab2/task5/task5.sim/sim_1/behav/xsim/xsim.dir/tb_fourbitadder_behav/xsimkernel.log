@@ -2,3 +2,6 @@ Running: xsim.dir/tb_fourbitadder_behav/xsimk -simmode gui -wdb tb_fourbitadder_
 Design successfully loaded
 Design Loading Memory Usage: 33016 KB (Peak: 33580 KB)
 Design Loading CPU Usage: 30 ms
+Simulation completed
+Simulation Memory Usage: 114752 KB (Peak: 172284 KB)
+Simulation CPU Usage: 30 ms
