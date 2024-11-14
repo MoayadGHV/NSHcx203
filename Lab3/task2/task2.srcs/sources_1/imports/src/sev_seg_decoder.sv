@@ -10,7 +10,7 @@ module seven_seg_decoder(
     logic D = bin[0];
     
     assign seg[0] = (~A & B & ~C & ~D) | (~A & ~B & ~C & D) | (A & B & ~C & D) | (A & ~B & C & D);
-    assign seg[1] = (A & C & D) | (A & B & D) | (B & C & ~D) | (~A & B & ~C & D);
+    assign seg[1] = (A & C & D) | (A & B & ~D) | (B & C & ~D) | (~A & B & ~C & D);
     assign seg[2] = (~A & ~B & C & ~D) | (A & B & C) | (A & B & ~D);
     assign seg[3] = (B & C & D) | (~A & ~B & ~C & D) | (~A & B & ~C & ~D) | (A & ~B & C & ~D);
     assign seg[4] = (~A & D) | (~B & ~C & D) | (~A & B & ~C);
