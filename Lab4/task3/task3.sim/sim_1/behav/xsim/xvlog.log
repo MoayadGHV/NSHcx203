@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/imports/sources_1/new/RDff.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RDff
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/new/fourbitregbehave.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fourbitregbehave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/new/fourbitregdataflow.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fourbitregdataflow
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/imports/sources_1/imports/new/rDlatch.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rDlatch
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/new/tb_fourbitregBehData.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_fourbitregBehData

@@ -1,0 +1,10 @@
+0.6
+2019.1
+May 24 2019
+14:51:52
+/home/nsh1/NSHcx203/Lab4/task3/task3.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/imports/sources_1/imports/new/rDlatch.sv,1731845964,systemVerilog,,/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/new/tb_fourbitregBehData.sv,,rDlatch,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/imports/sources_1/new/RDff.sv,1731849950,systemVerilog,,/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/new/fourbitregbehave.sv,,RDff,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/new/fourbitregbehave.sv,1731853866,systemVerilog,,/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/new/fourbitregdataflow.sv,,fourbitregbehave,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/new/fourbitregdataflow.sv,1731851686,systemVerilog,,/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/imports/sources_1/imports/new/rDlatch.sv,,fourbitregdataflow,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task3/task3.srcs/sources_1/new/tb_fourbitregBehData.sv,1731853159,systemVerilog,,,,tb_fourbitregBehData,,,,,,,,

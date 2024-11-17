@@ -2,3 +2,6 @@ Running: xsim.dir/tb_RDff_behav/xsimk -simmode gui -wdb tb_RDff_behav.wdb -simru
 Design successfully loaded
 Design Loading Memory Usage: 33000 KB (Peak: 33580 KB)
 Design Loading CPU Usage: 20 ms
+Simulation completed
+Simulation Memory Usage: 114736 KB (Peak: 172268 KB)
+Simulation CPU Usage: 20 ms
