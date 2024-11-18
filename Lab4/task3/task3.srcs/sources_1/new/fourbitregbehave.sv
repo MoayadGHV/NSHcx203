@@ -29,8 +29,8 @@ module fourbitregbehave(
 
     );
     
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk, negedge reset) begin
+        if (!reset) begin
             Q = 4'b0000;
             Qbar = 4'b1111;      
         end else begin

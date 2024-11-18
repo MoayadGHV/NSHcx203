@@ -34,7 +34,7 @@ always #5 clk = ~clk;
 
 initial begin
     clk = 0;
-    reset = 1; #1; reset = 0; #1; reset = 1; #3;
+    reset = 0; #10; reset = 1;
     D[0] = 0; D[1] = 1; D[2] = 0; D[3] = 1; #20;
     D[0] = 1; D[1] = 0; D[2] = 1; D[3] = 0; #20;
     reset = 0; #5; reset = 1; #5;
