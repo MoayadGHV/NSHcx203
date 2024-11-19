@@ -26,33 +26,35 @@ module fourBitCounter(
     input clk,
     input reset,
     input ld,
-    output [3:0] count
+    output [3:0] Q
     );
-    
-    logic [3:0] Qbar;
-    logic [3:0] Q;
     logic [3:0] Dtmp;
-    logic [2:0] xortmp;
-    logic [1:0] andtmp;
+    logic [3:0] Qbar;
+    logic [3:0] muxout;
+    logic tmp1, tmp2, tmp3, tmp4, tmp5, tmp6;
     
+    not G1(Dtmp[0], Q[0]);
+    mux2to1 MUX0(D[0], Dtmp[0], ld, muxout[0]);
     
-    mux2to1 m0(D[0], Qbar[0], ld, Dtmp[0]);
-    RDff RDff1(Dtmp[0], clk, reset, Q[0], Qbar[0]);
-    xor xor0(xortmp[0], Q[1], Q[0]);
-    mux2to1 m1(D[1], xortmp[0], ld, Dtmp[1]);
-    RDff RDff2(Dtmp[1], clk, reset, Q[1], Qbar[1]);
-    and and0(andtmp[0], Q[1], Q[0]);
-    xor xor1(xortmp[1], Q[2], andtmp[0]);
-    mux2to1 m2(D[2], xortmp[1], ld, Dtmp[2]);
-    RDff RDff3(Dtmp[2], clk, reset, Q[2], Qbar[2]);
-    and and1(andtmp[1], andtmp[0], Q[2]);
-    xor xor2(xortmp[2], Q[3], andtmp[1]);
-    mux2to1 m3(D[3], xortmp[2], ld, Dtmp[3]);
-    RDff RDff4(Dtmp[3], clk, reset, Q[3], Qbar[3]);
+    xor G2(tmp1, Q[0], upDown);   
+    xor G3(Dtmp[1], Q[1], tmp1);  
+    mux2to1 MUX1(D[1], Dtmp[1], ld, muxout[1]);
+      
+    and G4(tmp2, Q[1], Q[0]);    
+    xor G5(tmp3, tmp2, upDown);  
+    xor G6(Dtmp[2], Q[2], tmp3);    
+    mux2to1 MUX2(D[2], Dtmp[2], ld, muxout[2]);
+
+    and G7(tmp4, Q[2], Q[1]);    
+    and G8(tmp5, tmp4, Q[0]);    
+    xor G9(tmp6, tmp5, upDown);  
+    xor G10(Dtmp[3], Q[3], tmp6);  
+    mux2to1 MUX3(D[3], Dtmp[3], ld, muxout[3]);
     
-    mux2to1 mo0(Q[0], Qbar[0], upDown, count[0]);
-    mux2to1 mo1(Q[1], Qbar[1], upDown, count[1]);
-    mux2to1 mo2(Q[2], Qbar[2], upDown, count[2]);
-    mux2to1 mo3(Q[3], Qbar[3], upDown, count[3]);
+    RDff FF0 (muxout[0], clk, reset, Q[0], Qbar[0]);
+    RDff FF1 (muxout[1], clk, reset, Q[1], Qbar[1]);
+    RDff FF2 (muxout[2], clk, reset, Q[2], Qbar[2]);
+    RDff FF3 (muxout[3], clk, reset, Q[3], Qbar[3]);
+    
     
 endmodule
