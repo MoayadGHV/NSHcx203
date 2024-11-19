@@ -1,0 +1,9 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+1 , z
+0 , z
+1 , z
+1 , z
+1 , z
+0 , z
+$finish called at time : 80 ns : File "/home/it/Desktop/FPGA/LabsFPGA/task21/task21.srcs/sim_1/new/tb_shift_register.sv" Line 57
