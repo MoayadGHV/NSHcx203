@@ -5,18 +5,19 @@
 
 
 module RDff(
-    input D,
     input clk,
     input reset,
-    output Q,
-    output Qbar
+    input logic D,
+    output logic Q
     );
-    
-logic tmp, tmpbar;
-rDlatch rdl1(D, ~clk, reset, tmp, tmpbar);
-rDlatch rdl2(tmp, clk, reset, Q, Qbar);
 
 
+
+always @(posedge clk, negedge reset) begin
+    if (~reset) Q <= 1'b0;
+    else Q <= D;
+end
 
 
 endmodule
+

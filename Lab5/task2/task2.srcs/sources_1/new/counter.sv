@@ -26,12 +26,12 @@ module counter(
     );
     
     always @(posedge clk) begin   
-        count [15:12] = (count [11:8] == 4'b1001) ? count [15:12] + 4'b1 : count[15:12];
-        count [15:12] = (count [15:12] == 4'b1001) ? 0 : count[15:12]; 
-        count [11:8] = (count [7:4] == 4'b1001) ? count [11:8] + 4'b1 : count[11:8];
-        count [11:8] = (count [11:8] == 4'b1001) ? 0 : count[11:8]; 
+        count [15:12] = (count [11:8] == 4'b1001 && count [7:4] == 4'b1001 && count [3:0] == 4'b1001) ? count [15:12] + 4'b1 : count[15:12];
+        count [15:12] = (count [15:12] == 4'b1010) ? 0 : count[15:12]; 
+        count [11:8] = (count [7:4] == 4'b1001 && count [3:0] == 4'b1001) ? count [11:8] + 4'b1 : count[11:8];
+        count [11:8] = (count [11:8] == 4'b1010) ? 0 : count[11:8]; 
         count [7:4] = (count [3:0] == 4'b1001) ? count [7:4] + 4'b1 : count[7:4];
-        count [7:4] = (count [7:4] == 4'b1001) ? 0 : count[7:4];
+        count [7:4] = (count [7:4] == 4'b1010) ? 0 : count[7:4];
         count [3:0] = (count [3:0] == 4'b1001) ? 0 : count[3:0] + 4'b1;
     end
     

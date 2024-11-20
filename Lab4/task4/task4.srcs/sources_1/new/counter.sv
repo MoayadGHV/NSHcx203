@@ -27,14 +27,8 @@ module counter(
     output logic [7:0] AN,    
     input logic [15:0] SW,
     input logic CPU_RESETN
-//    output logic LED[15]
     );
         
-
-//    logic [3:0] Qdf;
-//    logic [3:0] Qbardf;
-//    logic [3:0] Qb;
-//    logic [3:0] Qbarb;
 
     
     // Seven segments Controller
@@ -43,8 +37,6 @@ module counter(
     wire [3:0] out;
     wire switch1;
     
-//    cipher cph(.s(SW[1:0]), .out(out));
-
     fourBitCounter fBC( .upDown(SW[15]), .D(SW[3:0]), .clk(BTNC), .reset(CPU_RESETN), .ld(SW[14]), .count(out));
 
     
@@ -57,7 +49,6 @@ module counter(
     assign digits[5] = 4'b1111;
     assign digits[6] = 4'b1111;
     assign digits[7] = out;
-//    assign LED[15] = SW[15];
     
     sev_seg_controller ssc(
         .clk(CLK100MHZ),
