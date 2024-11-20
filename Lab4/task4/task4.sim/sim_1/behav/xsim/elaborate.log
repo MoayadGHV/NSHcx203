@@ -3,10 +3,14 @@ Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
 Running: /home/nsh1/Xilinx/Vivado/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 4a4f5542b5e04db3b796fac15d8d2a4f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_fourBitCounter_behav xil_defaultlib.tb_fourBitCounter xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'a' [/home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv:37]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'a' [/home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv:41]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'a' [/home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv:39]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'a' [/home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv:42]
 WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'a' [/home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv:46]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'a' [/home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv:52]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'a' [/home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv:50]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'a' [/home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv:53]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'a' [/home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv:54]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'a' [/home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv:55]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'a' [/home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv:56]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis

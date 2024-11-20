@@ -36,7 +36,7 @@ initial begin
     D = 4'b0111; #25;
     reset = 0; #10; reset = 1; #30;
     ld = 0; #10; ld = 1; #30;
-    upDown = 1; #100;
+    upDown = 1; #30;
     $finish;
 end
 
