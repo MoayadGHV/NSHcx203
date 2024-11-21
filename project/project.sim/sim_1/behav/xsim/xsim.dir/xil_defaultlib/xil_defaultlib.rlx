@@ -1,0 +1,9 @@
+0.6
+2019.1
+May 24 2019
+14:51:52
+/home/nsh1/project/project.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+/home/nsh1/project/project.srcs/sim_1/new/testBench.sv,1732169066,systemVerilog,,,,testBench,,,,,,,,
+/home/nsh1/project/project.srcs/sources_1/new/ALU.sv,1732170304,systemVerilog,,/home/nsh1/project/project.srcs/sources_1/new/fulladder.sv,,ALU,,,,,,,,
+/home/nsh1/project/project.srcs/sources_1/new/fulladder.sv,1732169454,systemVerilog,,/home/nsh1/project/project.srcs/sources_1/new/halfadder.sv,,fulladder,,,,,,,,
+/home/nsh1/project/project.srcs/sources_1/new/halfadder.sv,1732168847,systemVerilog,,/home/nsh1/project/project.srcs/sim_1/new/testBench.sv,,halfadder,,,,,,,,

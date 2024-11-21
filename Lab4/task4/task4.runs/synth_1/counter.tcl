@@ -19,9 +19,6 @@ proc create_report { reportName command } {
 }
 set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 5
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -35,12 +32,9 @@ set_property board_part digilentinc.com:arty-a7-100:part0:1.1 [current_project]
 set_property ip_output_repo /home/nsh1/NSHcx203/Lab4/task4/task4.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib -sv {
-  /home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/imports/sources_1/imports/sources_1/new/RDff.sv
   /home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/imports/NSHcx203/Lab4/task3/task3.srcs/sources_1/imports/src/counter_n_bit.sv
   /home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/imports/NSHcx203/Lab4/task3/task3.srcs/sources_1/imports/src/decoder.sv
   /home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/fourBitCounter.sv
-  /home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/imports/new/mux2to1.sv
-  /home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/imports/sources_1/imports/sources_1/imports/new/rDlatch.sv
   /home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/imports/NSHcx203/Lab4/task3/task3.srcs/sources_1/imports/src/sev_seg_controller.sv
   /home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/imports/NSHcx203/Lab4/task3/task3.srcs/sources_1/imports/src/sev_seg_decoder.sv
   /home/nsh1/NSHcx203/Lab4/task4/task4.srcs/sources_1/new/counter.sv

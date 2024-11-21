@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Nov 20 10:25:53 2024
-# Process ID: 45139
+# Start of session at: Wed Nov 20 12:12:36 2024
+# Process ID: 68942
 # Current directory: /home/nsh1/NSHcx203/Lab5/task2/task2.runs/synth_1
 # Command line: vivado -log mbitctrFPGA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mbitctrFPGA.tcl
 # Log file: /home/nsh1/NSHcx203/Lab5/task2/task2.runs/synth_1/mbitctrFPGA.vds
