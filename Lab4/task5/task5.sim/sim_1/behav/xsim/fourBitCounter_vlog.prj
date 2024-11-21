@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../task5.srcs/sources_1/imports/sources_1/imports/sources_1/imports/sources_1/new/RDff.sv" \
+"../../../../task5.srcs/sources_1/imports/sources_1/new/fourBitCounter.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

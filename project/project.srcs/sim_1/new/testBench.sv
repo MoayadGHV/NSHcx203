@@ -22,17 +22,19 @@
 
 module testBench;
 
-logic [7:0] a, b, s, sel;
-logic c;
+logic [7:0] a, b, s;
+logic c, op;
 
-ALU #(8) alu(a, b, sel, s, c);
+ALU #(8) alu(a, b, op, s, c);
 
 
 initial begin
 
-    a = 8'b00000001;
+    a = 8'b11111111;
     b = 8'b00000001;
-    sel = 8'b11111111;
+    op = 0; #10;
+    op = 1; #10;
+    $finish;
     
     end
     

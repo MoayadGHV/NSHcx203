@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../task5.srcs/sources_1/imports/sources_1/imports/sources_1/imports/sources_1/new/RDff.sv" \
+"../../../../task5.srcs/sources_1/new/eightBitcounter.sv" \
+"../../../../task5.srcs/sources_1/new/eightbitreg.sv" \
+"../../../../task5.srcs/sources_1/new/multiplier.sv" \
+"../../../../task5.srcs/sources_1/new/sixteeBitsreg.sv" \
+"../../../../task5.srcs/sim_1/new/tb_multiplier.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,12 @@
+0.6
+2019.1
+May 24 2019
+14:51:52
+/home/nsh1/NSHcx203/Lab4/task5/task5.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sim_1/new/tb_multiplier.sv,1732108940,systemVerilog,,,,tb_multiplier,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sources_1/imports/sources_1/imports/sources_1/imports/sources_1/new/RDff.sv,1732102089,systemVerilog,,/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sources_1/new/eightBitcounter.sv,,RDff,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sources_1/new/eightBitcounter.sv,1732108850,systemVerilog,,/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sources_1/new/eightbitreg.sv,,eightBitcounter,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sources_1/new/eightbitreg.sv,1732103315,systemVerilog,,/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sources_1/new/multiplier.sv,,eightbitreg,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sources_1/new/multiplier.sv,1732107806,systemVerilog,,/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sources_1/new/sixteeBitsreg.sv,,multiplier,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sources_1/new/sixteeBitsreg.sv,1732099294,systemVerilog,,/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sim_1/new/tb_multiplier.sv,,sixteenBitreg,,,,,,,,
+/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sources_1/new/sixteenBitsAdder.sv,1732100935,systemVerilog,,/home/nsh1/NSHcx203/Lab4/task5/task5.srcs/sim_1/new/tb_multiplier.sv,,Adder,,,,,,,,

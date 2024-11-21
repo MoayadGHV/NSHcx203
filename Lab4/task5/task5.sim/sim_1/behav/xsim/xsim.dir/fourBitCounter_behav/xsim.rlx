@@ -1,0 +1,12 @@
+
+{ 
+    crc :  2949979176025581900  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 7937aeb42310418b9f2cc5ac9d7a262b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fourBitCounter_behav xil_defaultlib.fourBitCounter xil_defaultlib.glbl" , 
+    buildDate : "May 24 2019" , 
+    buildTime : "14:51:52" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/fourBitCounter_behav/xsimk\"   \"xsim.dir/fourBitCounter_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/fourBitCounter_behav/obj/xsim_1.lnx64.o\" -L\"/home/nsh1/Xilinx/Vivado/Vivado/2019.1/lib/lnx64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
