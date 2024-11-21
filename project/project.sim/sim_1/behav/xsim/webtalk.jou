@@ -2,11 +2,11 @@
 # Webtalk v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Nov 21 09:01:26 2024
-# Process ID: 164782
-# Current directory: /home/nsh1/project/project.sim/sim_1/behav/xsim
-# Command line: wbtcv -mode batch -source /home/nsh1/project/project.sim/sim_1/behav/xsim/xsim.dir/testBench_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: /home/nsh1/project/project.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: /home/nsh1/project/project.sim/sim_1/behav/xsim/webtalk.jou
+# Start of session at: Thu Nov 21 13:44:55 2024
+# Process ID: 204167
+# Current directory: /home/nsh1/NSHcx203/project/project.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/nsh1/NSHcx203/project/project.sim/sim_1/behav/xsim/xsim.dir/tb_main_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/nsh1/NSHcx203/project/project.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/nsh1/NSHcx203/project/project.sim/sim_1/behav/xsim/webtalk.jou
 #-----------------------------------------------------------
-source /home/nsh1/project/project.sim/sim_1/behav/xsim/xsim.dir/testBench_behav/webtalk/xsim_webtalk.tcl -notrace
+source /home/nsh1/NSHcx203/project/project.sim/sim_1/behav/xsim/xsim.dir/tb_main_behav/webtalk/xsim_webtalk.tcl -notrace

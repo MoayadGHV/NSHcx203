@@ -9,15 +9,13 @@ module ALU #(int n = 8)(
     output [n-1:0] out,
     output carryOut
     );
-
-    logic [n-1:0] bop;
     
-    assign out = (op) ? a - b : a + b;
+    logic [n:0] tmp;
+    assign tmp = (op) ? a - b : a + b;
 
-//    assign  = a + bop;
 
-    assign carryOut = ~(((a[n-1] & b[n-1])) | ((a[n-1] ^ b[n-1])& out[n-1]));
-    
+    assign carryOut = (tmp[n] == 1'b1) ? 1 : 0;
+    assign out = tmp[n-1:0];
     
 
 

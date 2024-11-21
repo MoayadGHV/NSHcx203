@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux2to4 #(int n = 4)(
-    input [n-1:0] in1, //imm 
+module mux #(int n = 8)(
+    input [2:0] in1, //imm 
     input [n-1:0] in2, // ALU
     input select,
     output [n-1: 0] outM
