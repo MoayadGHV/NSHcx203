@@ -42,11 +42,11 @@ module memory #(int n = 8)(
 
     always @(*) begin
         if (readWrite) begin
-            en <= 8'b0;
-            en[address] <= 1'b1;
-        end else if (!readWrite) begin
-            out <= value[address];
             en = 8'b0;
+            en[address] = 1'b1;
+        end else if (!readWrite) begin
+            en = 8'b0;
+            out = value[address];
         end
     end
     

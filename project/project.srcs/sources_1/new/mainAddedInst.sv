@@ -45,17 +45,19 @@ module mainAddedInst#(int n = 8)(
     
     
     
-    logic [n-1:0] ALUout, MUXout, regAout, regBout;
+    logic [n-1:0] ALUout, MUXout, regAout, regBout, MEMout;
     logic aluCarry, enA, enB, enO, Cout, pcEn, rW;
     
 
     
     
     programcounter pc(.in(imm), .en(pcEn), .reset(reset), .clk(clk), .out(addressIndex));
-    ROM rom(.address(addressIndex), .instruction(inst));
+    romAddedInst rom(.address(addressIndex), .instruction(inst));
     
-    mux #(n) mux(.in1(imm), .in2(ALUout), .select(sreg), .outM(MUXout));
+    mux2s #(n) mux(.in1(ALUout), .in3(imm), .in4(MEMout), .select({sreg, c}), .outM(MUXout));
     Decoder decoder(.De({d1, d0}), .Den({enA, enB, enO}));
+    
+    memory #(n) m(.address(imm), .readWrite(rW), .reset(reset), .clk(clk), .in(regAout), .out(MEMout));
     
     register #(n) RA(.in(MUXout), .clk(clk), .en(enA), .reset(reset), .out(regAout));
     register #(n) RB(.in(MUXout), .clk(clk), .en(enB), .reset(reset), .out(regBout));
@@ -65,8 +67,8 @@ module mainAddedInst#(int n = 8)(
     
     RDff carryff(.clk(clk), .reset(reset), .ld(1'b1), .D(aluCarry), .Q(Cout));
     
-    assign rW = ~(c & sreg);
-    assign pcEn = (~sreg & c & Cout) | j;
+    assign rW = ( j & sreg);
+    assign pcEn = (~sreg & c & Cout) | (j & ~sreg);
     
 
 

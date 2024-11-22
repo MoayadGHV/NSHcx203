@@ -3,11 +3,12 @@ sv xil_defaultlib  \
 "../../../../project.srcs/sources_1/new/ALU.sv" \
 "../../../../project.srcs/sources_1/new/Decoder.sv" \
 "../../../../project.srcs/sources_1/new/RDff.sv" \
-"../../../../project.srcs/sources_1/new/ROM.sv" \
 "../../../../project.srcs/sources_1/new/mainAddedInst.sv" \
-"../../../../project.srcs/sources_1/new/mux.sv" \
+"../../../../project.srcs/sources_1/new/memory.sv" \
+"../../../../project.srcs/sources_1/new/mux2s.sv" \
 "../../../../project.srcs/sources_1/new/programcounter.sv" \
 "../../../../project.srcs/sources_1/new/register.sv" \
+"../../../../project.srcs/sources_1/new/romAddedInst.sv" \
 "../../../../project.srcs/sim_1/new/tb_main.sv" \
 
 # compile glbl module
