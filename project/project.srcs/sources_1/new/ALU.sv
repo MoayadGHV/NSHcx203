@@ -14,7 +14,7 @@ module ALU #(int n = 8)(
     assign tmp = (op) ? a - b : a + b;
 
 
-    assign carryOut = (tmp[n] == 1'b1) ? 1 : 0;
+    assign carryOut = ((tmp[n] == 1'b1) | &(tmp)) ? 1 : 0;
     assign out = tmp[n-1:0];
     
 

@@ -26,7 +26,7 @@ module tb_main;
 logic clk, reset;
 logic [7:0] regO;
 
-main #(8) m(clk, reset, regO);
+mainAddedInst #(8) m(clk, reset, regO);
 
 
 always #5 clk = ~clk;
