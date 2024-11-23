@@ -23,7 +23,9 @@
 module mainAddedInst#(int n = 8)(
     input clk,
     input reset, 
-    output [n-1:0] regO
+    output [n-1:0] regO,
+    output [n-1:0] regAout,
+    output [n-1:0] regBout
     );
 
 
@@ -45,7 +47,7 @@ module mainAddedInst#(int n = 8)(
     
     
     
-    logic [n-1:0] ALUout, MUXout, regAout, regBout, MEMout;
+    logic [n-1:0] ALUout, MUXout, MEMout;
     logic aluCarry, enA, enB, enO, Cout, pcEn, rW;
     
 
