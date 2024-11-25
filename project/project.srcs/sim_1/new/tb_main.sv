@@ -28,12 +28,14 @@ logic [7:0] regO;
 
 mainAddedInst #(8) m(clk, reset, regO);
 
-
 always #5 clk = ~clk;
 
 initial begin
+
     clk = 0; reset = 0; #5;
-    reset = 1; #120;
+    reset = 1; m.m.gen_registers[1].R.genloop[0].FF.Q = 1; 
+     #120;
+    
     $finish;
 end
 

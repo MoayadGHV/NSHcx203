@@ -48,7 +48,7 @@ module mainAddedInst#(int n = 8)(
     
     
     logic [n-1:0] ALUout, MUXout, MEMout;
-    logic aluCarry, enA, enB, enO, Cout, pcEn, rW;
+    logic aluCarry, aluZero, enA, enB, enO, Cout, Zout, pcEn, rW;
     
 
     
@@ -65,12 +65,13 @@ module mainAddedInst#(int n = 8)(
     register #(n) RB(.in(MUXout), .clk(clk), .en(enB), .reset(reset), .out(regBout));
     register #(n) RO(.in(regAout), .clk(clk), .en(enO), .reset(reset), .out(regO));
     
-    ALU  #(n) alu(.a(regAout), .b(regBout), .op(s), .out(ALUout), .carryOut(aluCarry));
+    ALU  #(n) alu(.a(regAout), .b(regBout), .op(s), .out(ALUout), .carryOut(aluCarry), .zeroOut(aluZero));
     
     RDff carryff(.clk(clk), .reset(reset), .ld(1'b1), .D(aluCarry), .Q(Cout));
+    RDff zeroff(.clk(clk), .reset(reset), .ld(1'b1), .D(aluZero), .Q(Zout));
     
-    assign rW = ( j & sreg);
-    assign pcEn = (~sreg & c & Cout) | (j & ~sreg);
+    assign rW = (j & sreg & ~c);
+    assign pcEn = (~sreg & c & Cout & ~j) | (j & ~sreg & ~c) | (c & Zout & sreg & j);
     
 
 
