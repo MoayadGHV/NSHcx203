@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1732374763">
-  <File Type="VDS-TIMING-PB" Name="mainFPGA_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="mainFPGA_timing_summary_synth.rpt"/>
+  <File Type="PA-TCL" Name="mainFPGA.tcl"/>
   <File Type="RDS-DCP" Name="mainFPGA.dcp"/>
+  <File Type="REPORTS-TCL" Name="mainFPGA_reports.tcl"/>
+  <File Type="RDS-RDS" Name="mainFPGA.vds"/>
   <File Type="RDS-UTIL-PB" Name="mainFPGA_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="mainFPGA_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="mainFPGA_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="mainFPGA.vds"/>
-  <File Type="REPORTS-TCL" Name="mainFPGA_reports.tcl"/>
-  <File Type="PA-TCL" Name="mainFPGA.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ALU.sv">

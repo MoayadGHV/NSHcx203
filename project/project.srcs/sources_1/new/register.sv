@@ -12,7 +12,7 @@ module register #(int n = 8)(
     
     genvar i;
     generate 
-        for(i= 0; i < n; i = i+1) begin :genloop
+        for(i= 0; i < n; i = i+1) begin : genloop
             RDff FF(.clk(clk), .reset(reset), .ld(en), .D(in[i]), .Q(out[i]));        
         end
     endgenerate

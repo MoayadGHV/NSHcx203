@@ -28,16 +28,17 @@ module romAddedInst(
     
     always @(*) begin
         case(address)
-        
-            4'd0:    instruction = 8'b00001000; 
-            4'd1:    instruction = 8'b00011001; 
+            
+            4'd0:    instruction = 8'b11001000; 
+            4'd1:    instruction = 8'b10111010; 
             4'd2:    instruction = 8'b00100000; 
-            4'd3:    instruction = 8'b00010000; 
-            4'd4:    instruction = 8'b01110000; 
-            4'd5:    instruction = 8'b00000000; 
-            4'd6:    instruction = 8'b00010100; 
-            4'd7:    instruction = 8'b00000100; 
-            4'd8:    instruction = 8'b10110010; 
+            4'd3:    instruction = 8'b01001001; 
+            4'd4:    instruction = 8'b01011010; 
+            4'd5:    instruction = 8'b00100000; 
+            4'd6:    instruction = 8'b10111010; 
+            4'd7:    instruction = 8'b00000000; 
+            4'd8:    instruction = 8'b01110000;
+            4'd9:    instruction = 8'b10110100; 
             default: instruction = 8'b00000000;
         endcase
     end
