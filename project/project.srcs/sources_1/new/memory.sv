@@ -28,27 +28,22 @@ module memory #(int n = 8)(
     input [n-1:0] in,
     output logic [n-1:0] out
     );
+    logic [n-1:0]dataFF[7:0];
     
     
-    logic [7:0] en;
-    logic [7:0] value[8];
-    
-    genvar i;
-    generate
-        for (i = 0; i < 8; i = i + 1) begin : gen_registers
-            register #(8) R ( .in(in), .clk(clk), .en(en[i]), .reset(reset), .out(value[i]));
+    always @(posedge clk, negedge reset) begin
+        if(~reset)
+        begin 
+        foreach(dataFF[i]) dataFF[i]='b0;
+        dataFF[1] = dataFF[1] | 1;
         end
-    endgenerate        
-
-    always @(*) begin
-        if (readWrite) begin
-            en = 8'b0;
-            en[address] = 1'b1;
-        end else if (!readWrite) begin
-            en = 8'b0;
-            out = value[address];
+        else if(readWrite) begin
+            dataFF[address] = in;
         end
+        
     end
+    assign out = dataFF[address];
+
     
     
     

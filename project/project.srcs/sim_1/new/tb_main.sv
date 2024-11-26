@@ -24,16 +24,16 @@ module tb_main;
 
 
 logic clk, reset;
-logic [7:0] regO;
+logic [7:0] regO, regAout, regBout;
 
-mainAddedInst #(8) m(clk, reset, regO);
+mainAddedInst #(8) m(clk, reset, regO, regAout, regBout);
 
 always #5 clk = ~clk;
 
 initial begin
 
     clk = 0; reset = 0; #5;
-    reset = 1; m.m.gen_registers[1].R.genloop[0].FF.Q = 1; 
+    reset = 1; m.m.dataFF[1] = 1;
      #120;
     
     $finish;

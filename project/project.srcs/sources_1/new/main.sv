@@ -23,7 +23,9 @@
 module main #(int n = 8)(
     input clk,
     input reset, 
-    output [n-1:0] regO
+    output [n-1:0] regO,
+    output logic [n-1:0] regAout,
+    output logic [n-1:0] regBout
     );
 
 
@@ -45,7 +47,7 @@ module main #(int n = 8)(
     
     
     
-    logic [n-1:0] ALUout, MUXout, regAout, regBout;
+    logic [n-1:0] ALUout, MUXout;//, regAout, regBout;
     logic ALUcarry, enA, enB, enO, Cout, PCen;
     logic tmp1;
 

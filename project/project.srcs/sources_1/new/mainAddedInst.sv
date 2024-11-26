@@ -20,12 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mainAddedInst#(int n = 8)(
+module mainAddedInst #(int n = 8)(
     input clk,
     input reset, 
     output [n-1:0] regO,
-    output [n-1:0] regAout,
-    output [n-1:0] regBout
+    output logic [n-1:0] regAout,
+    output logic [n-1:0] regBout,
+    output logic [n-1:0] secondmem
     );
 
 
@@ -71,9 +72,7 @@ module mainAddedInst#(int n = 8)(
     RDff zeroff(.clk(clk), .reset(reset), .ld(1'b1), .D(aluZero), .Q(Zout));
     
     assign rW = (j & sreg & ~c);
-    assign pcEn = (~sreg & c & Cout & ~j) | (j & ~sreg & ~c) | (c & Zout & sreg & j);
-    
-
+    assign pcEn = (~sreg & c & Cout & ~j) | (j & ~sreg & ~c) | (c & Zout & sreg & j); 
 
 endmodule
 

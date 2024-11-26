@@ -10,9 +10,9 @@ module mainFPGA(
     );
         
     localparam int n = 8;
-    localparam int clkdiv = 100000000; 
+    localparam int clkdiv = 100_000_000; 
     logic newclk;
-    logic [n-1:0] regO, regAout, regBout;
+    logic [n-1:0] regO, regAout, regBout, secondmem;
     // Seven segments Controller
     wire [6:0] Seg;
     wire [3:0] digits[0:7]; 
@@ -20,6 +20,7 @@ module mainFPGA(
     
     nbitctr #(clkdiv) nBC(.clk(CLK100MHZ), .reset(CPU_RESETN), .clk_out(newclk));
     mainAddedInst #(n) fibo(.clk(newclk), .reset(CPU_RESETN), .regO(regO), .regAout(regAout), .regBout(regBout));
+//    assign fibo.m.dataFF[1]=1;
     
 
     

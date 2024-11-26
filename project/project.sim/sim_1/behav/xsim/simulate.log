@@ -1,0 +1,3 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 125 ns : File "/home/nsh1/NSHcx203/project/project.srcs/sim_1/new/tb_main.sv" Line 39

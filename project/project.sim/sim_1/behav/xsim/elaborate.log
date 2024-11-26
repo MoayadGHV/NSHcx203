@@ -11,9 +11,9 @@ Compiling module xil_defaultlib.programcounter
 Compiling module xil_defaultlib.romAddedInst
 Compiling module xil_defaultlib.mux2s
 Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.memory
 Compiling module xil_defaultlib.RDff
 Compiling module xil_defaultlib.register_default
-Compiling module xil_defaultlib.memory_default
 Compiling module xil_defaultlib.ALU
 Compiling module xil_defaultlib.mainAddedInst
 Compiling module xil_defaultlib.tb_main
