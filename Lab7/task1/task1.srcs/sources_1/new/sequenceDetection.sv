@@ -21,9 +21,9 @@
 
 
 module sequenceDetection(
-    input clk,
-    input resetn,
-    input in,
+    input logic clk,
+    input logic resetn,
+    input logic in,
     output logic out,
     output logic [3:0] counter
     );
@@ -38,18 +38,19 @@ module sequenceDetection(
     
 
     
-    always_ff @(posedge clk or posedge resetn) begin
-    if (~resetn) begin
-        current_state <= A;
-        counter = 0;
-    end
-    else
-        current_state <= next_state;  
+    always_ff @(posedge clk, negedge resetn) begin
+        if (!resetn) begin
+            current_state <= A;
+            counter <= 0;
+        end else begin
+            current_state <= next_state;
+            if (out) begin
+                counter <= counter + 1;
+            end  
+        end
+            
         
-        
-    if (out)
-        counter = counter + 1;
-  
+    
     end
     
     
