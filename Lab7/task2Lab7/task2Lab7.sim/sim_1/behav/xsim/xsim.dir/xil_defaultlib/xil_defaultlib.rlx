@@ -1,0 +1,7 @@
+0.6
+2019.1
+May 24 2019
+14:51:52
+/home/it/Desktop/task2Lab7/task2Lab7.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+/home/it/Desktop/task2Lab7/task2Lab7.srcs/sim_1/new/tb_oddevendetector.sv,1733058156,systemVerilog,,,,tb_even_odd_detector,,,,,,,,
+/home/it/Desktop/task2Lab7/task2Lab7.srcs/sources_1/new/even_odd_detector.sv,1733058220,systemVerilog,,/home/it/Desktop/task2Lab7/task2Lab7.srcs/sim_1/new/tb_oddevendetector.sv,,even_odd_detector,,,,,,,,
