@@ -1,0 +1,7 @@
+0.6
+2019.1
+May 24 2019
+14:51:52
+/home/nsh1/NSHcx203/Lab7/task3/task3.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+/home/nsh1/NSHcx203/Lab7/task3/task3.srcs/sim_1/new/tb_digitalLock.sv,1733057746,systemVerilog,,,,tb_digitalLock,,,,,,,,
+/home/nsh1/NSHcx203/Lab7/task3/task3.srcs/sources_1/new/digitalLock.sv,1733057869,systemVerilog,,/home/nsh1/NSHcx203/Lab7/task3/task3.srcs/sim_1/new/tb_digitalLock.sv,,digitalLock,,,,,,,,
