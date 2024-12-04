@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Nov 25 15:16:50 2024
+# Process ID: 152367
+# Current directory: /home/nsh1/NSHcx203/project/project.runs/impl_1
+# Command line: vivado -log mainFPGA.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source mainFPGA.tcl -notrace
+# Log file: /home/nsh1/NSHcx203/project/project.runs/impl_1/mainFPGA.vdi
+# Journal file: /home/nsh1/NSHcx203/project/project.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source mainFPGA.tcl -notrace
