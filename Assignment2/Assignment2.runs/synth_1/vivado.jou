@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Dec  4 21:31:43 2024
+# Process ID: 8932
+# Current directory: /home/nsh1/NSHcx203/Assignment2/Assignment2.runs/synth_1
+# Command line: vivado -log dataflow.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dataflow.tcl
+# Log file: /home/nsh1/NSHcx203/Assignment2/Assignment2.runs/synth_1/dataflow.vds
+# Journal file: /home/nsh1/NSHcx203/Assignment2/Assignment2.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source dataflow.tcl -notrace
