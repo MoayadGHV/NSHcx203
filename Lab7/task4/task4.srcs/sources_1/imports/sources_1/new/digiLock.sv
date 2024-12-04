@@ -5,10 +5,11 @@ module digiLockFPGA(
     input logic CLK100MHZ,
     output logic CA, CB, CC, CD, CE, CF, CG, DP,
     output logic [7:0] AN, 
-    output logic [0:0] LED,   
+    output logic [1:0] LED,   
     input logic [15:0] SW,
     input logic CPU_RESETN, 
-    input logic BTNC, BTNL, BTNR
+    input logic BTNC, BTNL, BTNR, BTNU
+
     );
         
 
@@ -20,7 +21,7 @@ module digiLockFPGA(
     logic [3:0] counter;
     logic [1:0] missCounter;
 
-digitalLock dl(.clk(CLK100MHZ), .reset(CPU_RESETN), .open(BTNL), .close(BTNR), .pass(SW[3:0]), .unlock(LED[0]), .status(status) , .counter(counter), .missCounter(missCounter));
+digitalLock dl(.clk(CLK100MHZ), .reset(CPU_RESETN), .open(BTNL), .close(BTNR), .edit(BTNU), .pass(SW[3:0]), .status(status));
     
     
     assign digits[0] = SW[0];

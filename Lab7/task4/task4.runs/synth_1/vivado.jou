@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sun Dec  1 17:11:51 2024
-# Process ID: 91336
+# Start of session at: Mon Dec  2 12:45:58 2024
+# Process ID: 92419
 # Current directory: /home/nsh1/NSHcx203/Lab7/task4/task4.runs/synth_1
 # Command line: vivado -log digiLockFPGA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source digiLockFPGA.tcl
 # Log file: /home/nsh1/NSHcx203/Lab7/task4/task4.runs/synth_1/digiLockFPGA.vds

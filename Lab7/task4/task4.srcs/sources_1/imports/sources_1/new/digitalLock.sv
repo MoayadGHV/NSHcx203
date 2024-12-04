@@ -1,97 +1,94 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 12/01/2024 03:29:49 PM
-// Design Name: 
-// Module Name: digitalClock
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module digitalLock(
     input clk, 
     input reset,
     input open,
     input close,
+    input edit,
     input logic [3:0] pass,
-    output logic unlock,
-    output logic [3:0] status,
-    output logic [3:0] counter,
-    output logic [1:0] missCounter
+//    output logic unlock,
+    output logic [3:0] status
+//    output logic [3:0] counter,
+//    output logic [1:0] missCounter
     );
-    logic rlclk;
+    logic rlclk, diffRst, diffRstM, CNTRST, CNTRSTM, editEn;
+    logic [3:0] counter, pwd;
+    logic [1:0] missCounter, current_state, next_state;
     
-    typedef enum logic [1:0] {
-        A,
-        B,
-        C
-    } state_f;
+    localparam C=2'b00,O=2'b01,F=2'b10, E=2'b11;
     
-    
-    state_f current_state, next_state;
-    
-    always_ff @(posedge clk, negedge reset) begin
+    assign diffRst = diffRstM & reset;
+    assign CNTRST = CNTRSTM & reset;    
+
+            
+    always_ff @(posedge clk or negedge reset) begin
         if (!reset) begin
-            current_state <= A;
-            counter = 4'd0;
-            missCounter = 2'd0;
+            current_state <= C;
+//            pwd = 4'b1001;
         end else begin
             current_state <= next_state;
-            if (open & (pass != 4'b1001)) begin
-                missCounter = missCounter + 1; 
-            end
+        end
+    end
+    
+
+    always_ff @(posedge open, negedge diffRst) begin
+            if (~diffRst)
+            missCounter <= 0;
+            else 
+            missCounter <= missCounter +1; 
+           
+     end
+       
+
+    always_ff @(posedge rlclk, negedge CNTRST) begin
+        if (~CNTRST) begin
+            counter <= 0;
+        end else begin
+            counter <= counter +1;
         end
         
+    end    
+    
+//    always_comb begin
+//        if (pwdChange) 
+//            pwd = pass;
+//    end
+    
+    always_ff @(posedge edit) begin
+        editEn = ~editEn;
     end
-        
+    
+
+    
     always_comb begin
-        case(current_state)
-            A: next_state = ((pass == 4'b1001) & open) ? B : (missCounter > 2) ? C : A;
-            B: next_state = close ? A : B;
-            C: next_state = (counter > 10) ? A : C;
-            default: next_state = A;
+        case (current_state)
+            C: begin
+                next_state = open ? (pass == pwd ? O:(missCounter >2 ?F:C)):C;
+                diffRstM = 1;
+                CNTRSTM = 0;
+                end
+            O: begin
+                next_state = close ? C : (editEn) ? E : O;
+                diffRstM = 0;
+                CNTRSTM = 0;
+                end
+            F: begin
+                next_state = (counter > 10) ? C : F;
+                diffRstM = 0;
+                CNTRSTM = 1;
+                end
+            E: begin
+                next_state = (editEn) ? E : O;
+                diffRstM = 0;
+                CNTRSTM = 0;
+                pwd = pass;
+                end
         endcase
-        if (open & (pass != 4'b1001)) begin
-                missCounter = missCounter + 1; 
-        end
-        
     end
-    
+
     always_comb begin
-        unlock = (current_state == B);
-        if (unlock) begin
-            status = 4'd0;
-        end else begin
-            status = 4'd12;
-        end
-        
+        status = (current_state == O) ? 4'd0 : (current_state == F) ? 4'd15 : (current_state == C) ? 4'd12 : 4'd14;
     end
-    
-    
-    
-    always @(posedge rlclk) begin
-    
-        if (current_state == C) begin
-            counter = counter + 1;
-        end else begin
-            counter = 4'd0;
-        end
-        
-    end
+
     nbitctr #(100000000) rlCtr(.clk(clk), .reset(reset), .clk_out(rlclk));
-    
-    
-    
+
 endmodule
