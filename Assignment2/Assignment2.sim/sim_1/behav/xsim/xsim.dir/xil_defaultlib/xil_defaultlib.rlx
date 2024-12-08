@@ -3,5 +3,6 @@
 May 24 2019
 14:51:52
 /home/nsh1/NSHcx203/Assignment2/Assignment2.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
-/home/nsh1/NSHcx203/Assignment2/Assignment2.srcs/sim_1/new/tb_CB.sv,1733392536,systemVerilog,,,,tb_CB,,,,,,,,
-/home/nsh1/NSHcx203/Assignment2/Assignment2.srcs/sources_1/new/circleBresenham.sv,1733395050,systemVerilog,,/home/nsh1/NSHcx203/Assignment2/Assignment2.srcs/sim_1/new/tb_CB.sv,,circle_bresenham,,,,,,,,
+/home/nsh1/NSHcx203/Assignment2/Assignment2.srcs/sim_1/new/tb_CB.sv,1733652091,systemVerilog,,,,tb_CB,,,,,,,,
+/home/nsh1/NSHcx203/Assignment2/Assignment2.srcs/sources_1/new/control_bresnham.sv,1733651724,systemVerilog,,/home/nsh1/NSHcx203/Assignment2/Assignment2.srcs/sources_1/new/data_bresenham.sv,,control_bresenham,,,,,,,,
+/home/nsh1/NSHcx203/Assignment2/Assignment2.srcs/sources_1/new/data_bresenham.sv,1733648781,systemVerilog,,/home/nsh1/NSHcx203/Assignment2/Assignment2.srcs/sim_1/new/tb_CB.sv,,data_bresenham,,,,,,,,

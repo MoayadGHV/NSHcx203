@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1733662041">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-DRC" Name="top_bresenham.drc"/>
+  <File Type="BG-BGN" Name="top_bresenham.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="top_bresenham.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="top_bresenham.ltx"/>
+  <File Type="BITSTR-MMI" Name="top_bresenham.mmi"/>
+  <File Type="BITSTR-BMM" Name="top_bresenham_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="top_bresenham.nky"/>
+  <File Type="BITSTR-RBT" Name="top_bresenham.rbt"/>
+  <File Type="BITSTR-MSK" Name="top_bresenham.msk"/>
+  <File Type="BG-BIN" Name="top_bresenham.bin"/>
+  <File Type="BG-BIT" Name="top_bresenham.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="top_bresenham_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="top_bresenham_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="top_bresenham_bus_skew_postroute_physopted.rpt"/>
+  <File Type="RDI-RDI" Name="top_bresenham.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="top_bresenham_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="top_bresenham_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="top_bresenham_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="top_bresenham_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="top_bresenham_postroute_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW" Name="top_bresenham_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="top_bresenham_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="top_bresenham_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="top_bresenham_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="top_bresenham_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="top_bresenham_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="top_bresenham_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="top_bresenham_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="top_bresenham_power_routed.rpx"/>
+  <File Type="PLACE-UTIL-PB" Name="top_bresenham_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="top_bresenham_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="top_bresenham_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="top_bresenham_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="top_bresenham_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="top_bresenham_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="top_bresenham_timing_summary_opted.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="top_bresenham_incremental_reuse_placed.rpt"/>
+  <File Type="OPT-HWDEF" Name="top_bresenham.hwdef"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="top_bresenham_bus_skew_routed.rpx"/>
+  <File Type="REPORTS-TCL" Name="top_bresenham_reports.tcl"/>
+  <File Type="PWROPT-DRC" Name="top_bresenham_drc_pwropted.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="top_bresenham_bus_skew_routed.pb"/>
+  <File Type="PA-TCL" Name="top_bresenham.tcl"/>
+  <File Type="INIT-TIMING" Name="top_bresenham_timing_summary_init.rpt"/>
+  <File Type="PLACE-CTRL" Name="top_bresenham_control_sets_placed.rpt"/>
+  <File Type="PWROPT-TIMING" Name="top_bresenham_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="top_bresenham_incremental_reuse_pre_placed.rpt"/>
+  <File Type="OPT-DCP" Name="top_bresenham_opt.dcp"/>
+  <File Type="OPT-DRC" Name="top_bresenham_drc_opted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="top_bresenham_methodology_drc_opted.rpt"/>
+  <File Type="PLACE-TIMING" Name="top_bresenham_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-DRC" Name="top_bresenham_drc_routed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="top_bresenham_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="top_bresenham_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="top_bresenham_drc_routed.pb"/>
+  <File Type="PHYSOPT-DCP" Name="top_bresenham_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="top_bresenham_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="top_bresenham_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-PWR" Name="top_bresenham_power_routed.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="top_bresenham_routed_error.dcp"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="top_bresenham_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-DCP" Name="top_bresenham_routed.dcp"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="top_bresenham_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="top_bresenham_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC-RPX" Name="top_bresenham_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="top_bresenham_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="top_bresenham_power_summary_routed.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/vga-core-main/vga_controller.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment2/Assignment2.srcs/sources_1/imports/vga-core-main/vga_controller.v"/>
+        <Attr Name="ImportTime" Val="1733644319"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/new/control_bresnham.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment2/Assignment2.srcs/sources_1/new/control_bresnham.sv"/>
+        <Attr Name="ImportTime" Val="1733661577"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/new/data_bresenham.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment2/Assignment2.srcs/sources_1/new/data_bresenham.sv"/>
+        <Attr Name="ImportTime" Val="1733661530"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/vga-core-main/vga_core.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment2/Assignment2.srcs/sources_1/imports/vga-core-main/vga_core.sv"/>
+        <Attr Name="ImportTime" Val="1733644319"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/vga-core-main/video_memory.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment2/Assignment2.srcs/sources_1/imports/vga-core-main/video_memory.sv"/>
+        <Attr Name="ImportTime" Val="1733644319"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/new/top_bresenam.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment2/Assignment2.srcs/sources_1/new/top_bresenam.sv"/>
+        <Attr Name="ImportTime" Val="1733654113"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="top_bresenham"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/Downloads/pin-assignment.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment2/Assignment2.srcs/constrs_1/imports/Downloads/pin-assignment.xdc"/>
+        <Attr Name="ImportTime" Val="1733651613"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
