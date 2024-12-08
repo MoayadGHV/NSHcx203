@@ -22,7 +22,7 @@ module data_bresenham (
 
     // Dataflow logic
     always_ff @(posedge clk or negedge reset_n) begin
-        if (~reset_n | done == 1) begin
+        if (~reset_n) begin //| done == 1
             x = 0;
             r = (r_in > 59) ? 59 : r_in;
             y = r;
@@ -72,38 +72,54 @@ module data_bresenham (
             plot = 0;  
             count = count + 1;
             if (count == 7) begin
+            
                 plot = 0;
+                
                 if (d < 0) begin
+                
                     d = d + (4 * x) + 6;
+                    
                 end else begin
+                
                     d = d + 4 * (x - y) + 10;
                     y = y - 1;
+                    
                 end
                 x = x + 1;
             end
 
             if (x > y) begin
                 done = 1;  // Done drawing the circle
+                x = 0;
+                y = 0;
             end
         end else if(start_clear) begin
-//            x_out = 0;
-//            y_out = 0;
+            
             colorOut = 3'b000;
             plot = 1;
+            
             if (y_out == 119) begin
+            
                 if (x_out == 159) begin
+                
                     x_out = 0;
+                    
                 end
+                
                 x_out = x_out + 1;
                 y_out = 0;
+                
             end    
+            
             if ((x == 159) & (y == 119)) begin
+            
                 done = 1;
+                
             end
             
             y_out = y_out + 1;
 
-        end
+        end 
     end
 
 endmodule

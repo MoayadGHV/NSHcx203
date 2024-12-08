@@ -2,6 +2,7 @@ module control_bresenham (
     input clk,
     input reset_n,
     input startPlotting,
+    input startClearing,
     input done_data,
     output logic done,         
     output logic plotOut, 
@@ -23,7 +24,7 @@ module control_bresenham (
     // Clocking and resetting
     always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
-            current_state = CLEAR;
+            current_state = IDLE;
         end else begin
             current_state = next_state;
         end
@@ -36,6 +37,7 @@ module control_bresenham (
                 plotOut = 0;
                 clearOut = 0;
                 if (startPlotting) next_state = PLOT;
+                else if (startClearing) next_state = CLEAR;
                 else next_state = IDLE;
             end
 
@@ -65,7 +67,7 @@ module control_bresenham (
                 end
             end
 
-            default: next_state = CLEAR;
+            default: next_state = IDLE;
         endcase
     end
 

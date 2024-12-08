@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sun Dec  8 15:47:22 2024
-# Process ID: 4952
+# Start of session at: Sun Dec  8 16:25:04 2024
+# Process ID: 142353
 # Current directory: /home/nsh1/NSHcx203/Assignment2Part3/Assignment2Part3.runs/synth_1
 # Command line: vivado -log top_bresenham.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_bresenham.tcl
 # Log file: /home/nsh1/NSHcx203/Assignment2Part3/Assignment2Part3.runs/synth_1/top_bresenham.vds

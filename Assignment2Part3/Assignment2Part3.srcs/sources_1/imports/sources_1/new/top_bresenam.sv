@@ -24,7 +24,7 @@ module top_bresenham(
     input logic CLK100MHZ,
     input logic [15:0] SW,
     input logic CPU_RESETN,
-    input logic BTNC,
+    input logic BTNC, BTNU,
     output wire [3:0] VGA_R,               // VGA red channel
     output wire [3:0] VGA_G,               // VGA green channel
     output wire [3:0] VGA_B,               // VGA blue channel
@@ -41,15 +41,12 @@ module top_bresenham(
     logic [2:0] colorOut;
     logic dataDone, startPlot, startClear;
     logic plot;
-    reg count;
-    // Seven segments Controller
-    wire [6:0] Seg;
-    wire [3:0] digits[0:7]; 
-    assign LED[15] = 1'b1;;
+
     
     control_bresenham DUTctrl(
             .clk(CLK100MHZ), 
             .reset_n(CPU_RESETN), 
+            .startClearing(BTNU),
             .startPlotting(BTNC), 
             .done_data(dataDone), 
             .done(LED[0]), 
