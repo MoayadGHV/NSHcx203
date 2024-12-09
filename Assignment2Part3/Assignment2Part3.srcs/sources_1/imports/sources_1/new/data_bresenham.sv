@@ -31,6 +31,8 @@ module data_bresenham (
             colorOut = 0;
             count = 0;
             done = 0;
+            x_out = 0;
+            y_out = 0; 
         end else if (start_dataflow) begin
             
             plot = 1;
@@ -69,10 +71,10 @@ module data_bresenham (
                         y_out = yc - x; 
                     end
             endcase
-            plot = 0;  
             count = count + 1;
             if (count == 7) begin
-            
+                x_out = 0;
+                y_out = 0; 
                 plot = 0;
                 
                 if (d < 0) begin
