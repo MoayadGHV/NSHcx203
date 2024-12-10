@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date             : Sun Dec  8 16:26:00 2024
+| Date             : Mon Dec  9 16:03:03 2024
 | Host             : it-rdia running 64-bit Ubuntu 24.04.1 LTS
 | Command          : report_power -file top_bresenham_power_routed.rpt -pb top_bresenham_power_summary_routed.pb -rpx top_bresenham_power_routed.rpx
 | Design           : top_bresenham
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.118        |
+| Total On-Chip Power (W)  | 0.113        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.020        |
+| Dynamic (W)              | 0.016        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.5         |
@@ -52,18 +52,18 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.004 |        3 |       --- |             --- |
-| Slice Logic              |     0.003 |     2544 |       --- |             --- |
-|   LUT as Logic           |     0.003 |      834 |     63400 |            1.32 |
-|   CARRY4                 |    <0.001 |       32 |     15850 |            0.20 |
+| Clocks                   |     0.003 |        3 |       --- |             --- |
+| Slice Logic              |     0.002 |     2363 |       --- |             --- |
+|   LUT as Logic           |     0.002 |      766 |     63400 |            1.21 |
 |   LUT as Distributed RAM |    <0.001 |     1200 |     19000 |            6.32 |
-|   Register               |    <0.001 |      185 |    126800 |            0.15 |
+|   Register               |    <0.001 |      135 |    126800 |            0.11 |
 |   F7/F8 Muxes            |    <0.001 |      170 |     63400 |            0.27 |
-|   Others                 |     0.000 |       11 |       --- |             --- |
-| Signals                  |     0.013 |     1803 |       --- |             --- |
+|   CARRY4                 |    <0.001 |       20 |     15850 |            0.13 |
+|   Others                 |     0.000 |       10 |       --- |             --- |
+| Signals                  |     0.009 |     1647 |       --- |             --- |
 | I/O                      |    <0.001 |       42 |       210 |           20.00 |
 | Static Power             |     0.097 |          |           |                 |
-| Total                    |     0.118 |          |           |                 |
+| Total                    |     0.113 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.035 |       0.020 |      0.015 |
+| Vccint    |       1.000 |     0.030 |       0.015 |      0.015 |
 | Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -142,10 +142,10 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| top_bresenham  |     0.020 |
-|   DUTdata      |     0.006 |
-|   VGA          |     0.014 |
-|     vga_timing |     0.008 |
+| top_bresenham  |     0.016 |
+|   DUTdata      |     0.003 |
+|   VGA          |     0.012 |
+|     vga_timing |     0.007 |
 |     video_mem  |     0.005 |
 +----------------+-----------+
 

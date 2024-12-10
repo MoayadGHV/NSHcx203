@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir /home/nsh1/NSHcx203/Assignment2Part3/Assignment2Part3.sim/sim_1/behav/xsim/xsim.dir/tb_CB_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Mon Dec  9 08:54:28 2024" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Mon Dec  9 09:21:34 2024" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2019.1 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2552052" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "LIN64" -context "software_version_and_target_device"
@@ -14,11 +14,11 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "be6bd9fe-f6be-4d23-aa28-1a72b68254f0" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "aa6a5f8fdfba4abda8a3b0b2db628f5e" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "27" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "28" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Ubuntu" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "Ubuntu 24.04.1 LTS" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "13th Gen Intel(R) Core(TM) i7-1370P" -context "user_environment"
-webtalk_add_data -client project -key cpu_speed -value "2364.569 MHz" -context "user_environment"
+webtalk_add_data -client project -key cpu_speed -value "399.038 MHz" -context "user_environment"
 webtalk_add_data -client project -key total_processors -value "1" -context "user_environment"
 webtalk_add_data -client project -key system_ram -value "33.000 GB" -context "user_environment"
 webtalk_register_client -client xsim
@@ -26,7 +26,7 @@ webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
 webtalk_add_data -client xsim -key runtime -value "600 ns" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "0" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "0.02_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Time -value "0.03_sec" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Simulation_Memory -value "114748_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 130693559 -regid "" -xml /home/nsh1/NSHcx203/Assignment2Part3/Assignment2Part3.sim/sim_1/behav/xsim/xsim.dir/tb_CB_behav/webtalk/usage_statistics_ext_xsim.xml -html /home/nsh1/NSHcx203/Assignment2Part3/Assignment2Part3.sim/sim_1/behav/xsim/xsim.dir/tb_CB_behav/webtalk/usage_statistics_ext_xsim.html -wdm /home/nsh1/NSHcx203/Assignment2Part3/Assignment2Part3.sim/sim_1/behav/xsim/xsim.dir/tb_CB_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_transmit -clientid 2032821206 -regid "" -xml /home/nsh1/NSHcx203/Assignment2Part3/Assignment2Part3.sim/sim_1/behav/xsim/xsim.dir/tb_CB_behav/webtalk/usage_statistics_ext_xsim.xml -html /home/nsh1/NSHcx203/Assignment2Part3/Assignment2Part3.sim/sim_1/behav/xsim/xsim.dir/tb_CB_behav/webtalk/usage_statistics_ext_xsim.html -wdm /home/nsh1/NSHcx203/Assignment2Part3/Assignment2Part3.sim/sim_1/behav/xsim/xsim.dir/tb_CB_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

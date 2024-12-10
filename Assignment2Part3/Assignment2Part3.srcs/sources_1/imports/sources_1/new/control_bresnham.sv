@@ -24,11 +24,47 @@ module control_bresenham (
     // Clocking and resetting
     always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
-            current_state = IDLE;
+            current_state <= IDLE;
+          //  done = 0;   //
         end else begin
-            current_state = next_state;
+            current_state <= next_state;
         end
     end
+    
+    
+    always_comb begin
+        case (current_state) 
+            IDLE: begin
+              
+                if (startPlotting) next_state = PLOT;
+                else if (startClearing) next_state = CLEAR;
+                else next_state = IDLE;
+            end
+
+            PLOT: begin
+                if (done_data) begin 
+                    next_state = IDLE; 
+                end
+                else begin 
+                    next_state = PLOT;
+
+                end
+            end
+
+            CLEAR: begin
+                if (done_data) begin
+                    next_state = IDLE;
+                end else begin
+                    next_state = CLEAR;
+ 
+
+                end
+            end
+
+            default: next_state = IDLE;
+        endcase
+    end
+    
 
     // State control
     always_comb begin

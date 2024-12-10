@@ -17,16 +17,16 @@ module data_bresenham (
     logic [5:0] r;
     logic [7:0] xc = 80; 
     logic [6:0] yc = 60; 
-    logic [2:0] count;
+    logic [3:0] count;
     int d;
 
     // Dataflow logic
     always_ff @(posedge clk or negedge reset_n) begin
-        if (~reset_n) begin //| done == 1
+        if (~reset_n) begin //
             x = 0;
             r = (r_in > 59) ? 59 : r_in;
             y = r;
-            d = 0;
+            d = 3 - (2 * r);
             plot = 0;
             colorOut = 0;
             count = 0;
@@ -35,7 +35,12 @@ module data_bresenham (
             y_out = 0; 
         end else if (start_dataflow) begin
             
-            plot = 1;
+            r = (r_in > 59) ? 59 : r_in;
+            y = r;
+            d = 3 - (2 * r);
+            \
+            
+            
             colorOut = colorIn;
             case (count)
                 0:  begin 
@@ -70,12 +75,14 @@ module data_bresenham (
                         x_out = xc - y; 
                         y_out = yc - x; 
                     end
+                    
             endcase
+            plot = 1;
             count = count + 1;
-            if (count == 7) begin
-                x_out = 0;
-                y_out = 0; 
+            if (count > 7) begin
                 plot = 0;
+
+                
                 
                 if (d < 0) begin
                 
@@ -88,13 +95,14 @@ module data_bresenham (
                     
                 end
                 x = x + 1;
+                if (x > y) begin
+                    done = 1;  // Done drawing the circle
+                    x = 0;
+                    y = 0;
+                end
             end
 
-            if (x > y) begin
-                done = 1;  // Done drawing the circle
-                x = 0;
-                y = 0;
-            end
+            
         end else if(start_clear) begin
             
             colorOut = 3'b000;

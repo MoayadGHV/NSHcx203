@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Sun Dec  8 16:26:00 2024
+| Date         : Mon Dec  9 16:03:03 2024
 | Host         : it-rdia running 64-bit Ubuntu 24.04.1 LTS
 | Command      : report_timing_summary -max_paths 10 -file top_bresenham_timing_summary_routed.rpt -pb top_bresenham_timing_summary_routed.pb -rpx top_bresenham_timing_summary_routed.rpx -warn_on_violation
 | Design       : top_bresenham
@@ -53,21 +53,9 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 5 register/latch pins with no clock driven by root clock pin: CPU_RESETN (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: DUTctrl/current_state_reg[0]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: SW[3] (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: SW[4] (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: SW[5] (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: SW[6] (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: SW[7] (HIGH)
-
- There are 3 register/latch pins with no clock driven by root clock pin: DUTctrl/current_state_reg[0]/Q (HIGH)
-
- There are 3 register/latch pins with no clock driven by root clock pin: DUTctrl/current_state_reg[1]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: DUTctrl/current_state_reg[1]/Q (HIGH)
 
  There are 2 register/latch pins with no clock driven by root clock pin: DUTdata/done_reg/Q (HIGH)
 
@@ -86,7 +74,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 58 pins that are not constrained for maximum delay. (HIGH)
+ There are 52 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -100,7 +88,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There are 15 ports with no output delay specified. (HIGH)
+ There are 14 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -145,7 +133,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      0.963        0.000                      0                 9444        0.049        0.000                      0                 9444        3.750        0.000                       0                  1358  
+      1.031        0.000                      0                 9376        0.072        0.000                      0                 9376        3.750        0.000                       0                  1314  
 
 
 All user specified timing constraints are met.
@@ -168,7 +156,7 @@ sys_clk_pin  {0.000 5.000}      10.000          100.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-sys_clk_pin         0.963        0.000                      0                 9444        0.049        0.000                      0                 9444        3.750        0.000                       0                  1358  
+sys_clk_pin         1.031        0.000                      0                 9376        0.072        0.000                      0                 9376        3.750        0.000                       0                  1314  
 
 
 ------------------------------------------------------------------------------------------------
@@ -199,27 +187,27 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  sys_clk_pin
   To Clock:  sys_clk_pin
 
-Setup :            0  Failing Endpoints,  Worst Slack        0.963ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.049ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        1.031ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.072ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.750ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.963ns  (required time - arrival time)
+Slack (MET) :             1.031ns  (required time - arrival time)
   Source:                 DUTdata/y_out_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_13120_13183_0_2/RAMA/WE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_13440_13503_0_2/RAMA/WE
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.410ns  (logic 2.719ns (32.331%)  route 5.691ns (67.669%))
+  Data Path Delay:        8.258ns  (logic 2.657ns (32.174%)  route 5.601ns (67.826%))
   Logic Levels:           6  (CARRY4=3 LUT2=2 LUT6=1)
-  Clock Path Skew:        -0.059ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.997ns = ( 14.997 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.236ns
+  Clock Path Skew:        -0.143ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.992ns = ( 14.992 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.315ns
     Clock Pessimism Removal (CPR):    0.180ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -236,27 +224,27 @@ Slack (MET) :             0.963ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.633     5.236    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X10Y78         FDRE                                         r  DUTdata/y_out_reg[0]/C
+                         net (fo=1313, routed)        1.712     5.315    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X3Y79          FDCE                                         r  DUTdata/y_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y78         FDRE (Prop_fdre_C_Q)         0.518     5.754 r  DUTdata/y_out_reg[0]/Q
-                         net (fo=16, routed)          0.930     6.684    VGA/y_out[0]
-    SLICE_X9Y81          LUT2 (Prop_lut2_I0_O)        0.124     6.808 r  VGA/ram_reg_0_63_0_2_i_15/O
-                         net (fo=1, routed)           0.000     6.808    DUTdata/S[0]
-    SLICE_X9Y81          CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.358 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
-                         net (fo=1, routed)           0.000     7.358    DUTdata/ram_reg_0_63_0_2_i_10_n_0
-    SLICE_X9Y82          CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.222     7.580 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
-                         net (fo=1, routed)           0.490     8.070    DUTdata/write_address1[10]
-    SLICE_X11Y82         CARRY4 (Prop_carry4_S[1]_O[2])
-                                                      0.879     8.949 f  DUTdata/ram_reg_0_63_0_2_i_7/O[2]
-                         net (fo=160, routed)         2.218    11.167    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[5]
-    SLICE_X9Y113         LUT2 (Prop_lut2_I1_O)        0.302    11.469 f  VGA/video_mem/ram_reg_12480_12543_0_2_i_2/O
-                         net (fo=25, routed)          1.110    12.579    DUTdata/ram_reg_13824_13887_0_2
-    SLICE_X4Y115         LUT6 (Prop_lut6_I0_O)        0.124    12.703 r  DUTdata/ram_reg_13120_13183_0_2_i_1/O
-                         net (fo=4, routed)           0.943    13.646    VGA/video_mem/ram_reg_13120_13183_0_2/WE
-    SLICE_X6Y128         RAMD64E                                      r  VGA/video_mem/ram_reg_13120_13183_0_2/RAMA/WE
+    SLICE_X3Y79          FDCE (Prop_fdce_C_Q)         0.456     5.771 r  DUTdata/y_out_reg[0]/Q
+                         net (fo=16, routed)          0.727     6.498    VGA/y_out[0]
+    SLICE_X1Y79          LUT2 (Prop_lut2_I0_O)        0.124     6.622 r  VGA/ram_reg_0_63_0_2_i_15/O
+                         net (fo=1, routed)           0.000     6.622    DUTdata/S[0]
+    SLICE_X1Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     7.172 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
+                         net (fo=1, routed)           0.000     7.172    DUTdata/ram_reg_0_63_0_2_i_10_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.394 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
+                         net (fo=1, routed)           0.596     7.990    DUTdata/write_address1[10]
+    SLICE_X0Y80          CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.879     8.869 f  DUTdata/ram_reg_0_63_0_2_i_7/O[2]
+                         net (fo=160, routed)         2.265    11.133    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[5]
+    SLICE_X5Y111         LUT2 (Prop_lut2_I1_O)        0.302    11.435 f  VGA/video_mem/ram_reg_12480_12543_0_2_i_2/O
+                         net (fo=25, routed)          0.867    12.302    DUTdata/ram_reg_13824_13887_0_2
+    SLICE_X7Y107         LUT6 (Prop_lut6_I0_O)        0.124    12.426 r  DUTdata/ram_reg_13440_13503_0_2_i_1/O
+                         net (fo=4, routed)           1.147    13.573    VGA/video_mem/ram_reg_13440_13503_0_2/WE
+    SLICE_X6Y124         RAMD64E                                      r  VGA/video_mem/ram_reg_13440_13503_0_2/RAMA/WE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -266,31 +254,31 @@ Slack (MET) :             0.963ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.575    14.997    VGA/video_mem/ram_reg_13120_13183_0_2/WCLK
-    SLICE_X6Y128         RAMD64E                                      r  VGA/video_mem/ram_reg_13120_13183_0_2/RAMA/CLK
-                         clock pessimism              0.180    15.177    
-                         clock uncertainty           -0.035    15.142    
-    SLICE_X6Y128         RAMD64E (Setup_ramd64e_CLK_WE)
-                                                     -0.533    14.609    VGA/video_mem/ram_reg_13120_13183_0_2/RAMA
+                         net (fo=1313, routed)        1.570    14.992    VGA/video_mem/ram_reg_13440_13503_0_2/WCLK
+    SLICE_X6Y124         RAMD64E                                      r  VGA/video_mem/ram_reg_13440_13503_0_2/RAMA/CLK
+                         clock pessimism              0.180    15.172    
+                         clock uncertainty           -0.035    15.137    
+    SLICE_X6Y124         RAMD64E (Setup_ramd64e_CLK_WE)
+                                                     -0.533    14.604    VGA/video_mem/ram_reg_13440_13503_0_2/RAMA
   -------------------------------------------------------------------
-                         required time                         14.609    
-                         arrival time                         -13.646    
+                         required time                         14.604    
+                         arrival time                         -13.573    
   -------------------------------------------------------------------
-                         slack                                  0.963    
+                         slack                                  1.031    
 
-Slack (MET) :             0.963ns  (required time - arrival time)
+Slack (MET) :             1.031ns  (required time - arrival time)
   Source:                 DUTdata/y_out_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_13120_13183_0_2/RAMB/WE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_13440_13503_0_2/RAMB/WE
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.410ns  (logic 2.719ns (32.331%)  route 5.691ns (67.669%))
+  Data Path Delay:        8.258ns  (logic 2.657ns (32.174%)  route 5.601ns (67.826%))
   Logic Levels:           6  (CARRY4=3 LUT2=2 LUT6=1)
-  Clock Path Skew:        -0.059ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.997ns = ( 14.997 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.236ns
+  Clock Path Skew:        -0.143ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.992ns = ( 14.992 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.315ns
     Clock Pessimism Removal (CPR):    0.180ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -307,27 +295,27 @@ Slack (MET) :             0.963ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.633     5.236    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X10Y78         FDRE                                         r  DUTdata/y_out_reg[0]/C
+                         net (fo=1313, routed)        1.712     5.315    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X3Y79          FDCE                                         r  DUTdata/y_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y78         FDRE (Prop_fdre_C_Q)         0.518     5.754 r  DUTdata/y_out_reg[0]/Q
-                         net (fo=16, routed)          0.930     6.684    VGA/y_out[0]
-    SLICE_X9Y81          LUT2 (Prop_lut2_I0_O)        0.124     6.808 r  VGA/ram_reg_0_63_0_2_i_15/O
-                         net (fo=1, routed)           0.000     6.808    DUTdata/S[0]
-    SLICE_X9Y81          CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.358 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
-                         net (fo=1, routed)           0.000     7.358    DUTdata/ram_reg_0_63_0_2_i_10_n_0
-    SLICE_X9Y82          CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.222     7.580 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
-                         net (fo=1, routed)           0.490     8.070    DUTdata/write_address1[10]
-    SLICE_X11Y82         CARRY4 (Prop_carry4_S[1]_O[2])
-                                                      0.879     8.949 f  DUTdata/ram_reg_0_63_0_2_i_7/O[2]
-                         net (fo=160, routed)         2.218    11.167    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[5]
-    SLICE_X9Y113         LUT2 (Prop_lut2_I1_O)        0.302    11.469 f  VGA/video_mem/ram_reg_12480_12543_0_2_i_2/O
-                         net (fo=25, routed)          1.110    12.579    DUTdata/ram_reg_13824_13887_0_2
-    SLICE_X4Y115         LUT6 (Prop_lut6_I0_O)        0.124    12.703 r  DUTdata/ram_reg_13120_13183_0_2_i_1/O
-                         net (fo=4, routed)           0.943    13.646    VGA/video_mem/ram_reg_13120_13183_0_2/WE
-    SLICE_X6Y128         RAMD64E                                      r  VGA/video_mem/ram_reg_13120_13183_0_2/RAMB/WE
+    SLICE_X3Y79          FDCE (Prop_fdce_C_Q)         0.456     5.771 r  DUTdata/y_out_reg[0]/Q
+                         net (fo=16, routed)          0.727     6.498    VGA/y_out[0]
+    SLICE_X1Y79          LUT2 (Prop_lut2_I0_O)        0.124     6.622 r  VGA/ram_reg_0_63_0_2_i_15/O
+                         net (fo=1, routed)           0.000     6.622    DUTdata/S[0]
+    SLICE_X1Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     7.172 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
+                         net (fo=1, routed)           0.000     7.172    DUTdata/ram_reg_0_63_0_2_i_10_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.394 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
+                         net (fo=1, routed)           0.596     7.990    DUTdata/write_address1[10]
+    SLICE_X0Y80          CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.879     8.869 f  DUTdata/ram_reg_0_63_0_2_i_7/O[2]
+                         net (fo=160, routed)         2.265    11.133    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[5]
+    SLICE_X5Y111         LUT2 (Prop_lut2_I1_O)        0.302    11.435 f  VGA/video_mem/ram_reg_12480_12543_0_2_i_2/O
+                         net (fo=25, routed)          0.867    12.302    DUTdata/ram_reg_13824_13887_0_2
+    SLICE_X7Y107         LUT6 (Prop_lut6_I0_O)        0.124    12.426 r  DUTdata/ram_reg_13440_13503_0_2_i_1/O
+                         net (fo=4, routed)           1.147    13.573    VGA/video_mem/ram_reg_13440_13503_0_2/WE
+    SLICE_X6Y124         RAMD64E                                      r  VGA/video_mem/ram_reg_13440_13503_0_2/RAMB/WE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -337,31 +325,31 @@ Slack (MET) :             0.963ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.575    14.997    VGA/video_mem/ram_reg_13120_13183_0_2/WCLK
-    SLICE_X6Y128         RAMD64E                                      r  VGA/video_mem/ram_reg_13120_13183_0_2/RAMB/CLK
-                         clock pessimism              0.180    15.177    
-                         clock uncertainty           -0.035    15.142    
-    SLICE_X6Y128         RAMD64E (Setup_ramd64e_CLK_WE)
-                                                     -0.533    14.609    VGA/video_mem/ram_reg_13120_13183_0_2/RAMB
+                         net (fo=1313, routed)        1.570    14.992    VGA/video_mem/ram_reg_13440_13503_0_2/WCLK
+    SLICE_X6Y124         RAMD64E                                      r  VGA/video_mem/ram_reg_13440_13503_0_2/RAMB/CLK
+                         clock pessimism              0.180    15.172    
+                         clock uncertainty           -0.035    15.137    
+    SLICE_X6Y124         RAMD64E (Setup_ramd64e_CLK_WE)
+                                                     -0.533    14.604    VGA/video_mem/ram_reg_13440_13503_0_2/RAMB
   -------------------------------------------------------------------
-                         required time                         14.609    
-                         arrival time                         -13.646    
+                         required time                         14.604    
+                         arrival time                         -13.573    
   -------------------------------------------------------------------
-                         slack                                  0.963    
+                         slack                                  1.031    
 
-Slack (MET) :             0.963ns  (required time - arrival time)
+Slack (MET) :             1.031ns  (required time - arrival time)
   Source:                 DUTdata/y_out_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_13120_13183_0_2/RAMC/WE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_13440_13503_0_2/RAMC/WE
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.410ns  (logic 2.719ns (32.331%)  route 5.691ns (67.669%))
+  Data Path Delay:        8.258ns  (logic 2.657ns (32.174%)  route 5.601ns (67.826%))
   Logic Levels:           6  (CARRY4=3 LUT2=2 LUT6=1)
-  Clock Path Skew:        -0.059ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.997ns = ( 14.997 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.236ns
+  Clock Path Skew:        -0.143ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.992ns = ( 14.992 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.315ns
     Clock Pessimism Removal (CPR):    0.180ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -378,27 +366,27 @@ Slack (MET) :             0.963ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.633     5.236    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X10Y78         FDRE                                         r  DUTdata/y_out_reg[0]/C
+                         net (fo=1313, routed)        1.712     5.315    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X3Y79          FDCE                                         r  DUTdata/y_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y78         FDRE (Prop_fdre_C_Q)         0.518     5.754 r  DUTdata/y_out_reg[0]/Q
-                         net (fo=16, routed)          0.930     6.684    VGA/y_out[0]
-    SLICE_X9Y81          LUT2 (Prop_lut2_I0_O)        0.124     6.808 r  VGA/ram_reg_0_63_0_2_i_15/O
-                         net (fo=1, routed)           0.000     6.808    DUTdata/S[0]
-    SLICE_X9Y81          CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.358 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
-                         net (fo=1, routed)           0.000     7.358    DUTdata/ram_reg_0_63_0_2_i_10_n_0
-    SLICE_X9Y82          CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.222     7.580 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
-                         net (fo=1, routed)           0.490     8.070    DUTdata/write_address1[10]
-    SLICE_X11Y82         CARRY4 (Prop_carry4_S[1]_O[2])
-                                                      0.879     8.949 f  DUTdata/ram_reg_0_63_0_2_i_7/O[2]
-                         net (fo=160, routed)         2.218    11.167    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[5]
-    SLICE_X9Y113         LUT2 (Prop_lut2_I1_O)        0.302    11.469 f  VGA/video_mem/ram_reg_12480_12543_0_2_i_2/O
-                         net (fo=25, routed)          1.110    12.579    DUTdata/ram_reg_13824_13887_0_2
-    SLICE_X4Y115         LUT6 (Prop_lut6_I0_O)        0.124    12.703 r  DUTdata/ram_reg_13120_13183_0_2_i_1/O
-                         net (fo=4, routed)           0.943    13.646    VGA/video_mem/ram_reg_13120_13183_0_2/WE
-    SLICE_X6Y128         RAMD64E                                      r  VGA/video_mem/ram_reg_13120_13183_0_2/RAMC/WE
+    SLICE_X3Y79          FDCE (Prop_fdce_C_Q)         0.456     5.771 r  DUTdata/y_out_reg[0]/Q
+                         net (fo=16, routed)          0.727     6.498    VGA/y_out[0]
+    SLICE_X1Y79          LUT2 (Prop_lut2_I0_O)        0.124     6.622 r  VGA/ram_reg_0_63_0_2_i_15/O
+                         net (fo=1, routed)           0.000     6.622    DUTdata/S[0]
+    SLICE_X1Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     7.172 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
+                         net (fo=1, routed)           0.000     7.172    DUTdata/ram_reg_0_63_0_2_i_10_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.394 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
+                         net (fo=1, routed)           0.596     7.990    DUTdata/write_address1[10]
+    SLICE_X0Y80          CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.879     8.869 f  DUTdata/ram_reg_0_63_0_2_i_7/O[2]
+                         net (fo=160, routed)         2.265    11.133    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[5]
+    SLICE_X5Y111         LUT2 (Prop_lut2_I1_O)        0.302    11.435 f  VGA/video_mem/ram_reg_12480_12543_0_2_i_2/O
+                         net (fo=25, routed)          0.867    12.302    DUTdata/ram_reg_13824_13887_0_2
+    SLICE_X7Y107         LUT6 (Prop_lut6_I0_O)        0.124    12.426 r  DUTdata/ram_reg_13440_13503_0_2_i_1/O
+                         net (fo=4, routed)           1.147    13.573    VGA/video_mem/ram_reg_13440_13503_0_2/WE
+    SLICE_X6Y124         RAMD64E                                      r  VGA/video_mem/ram_reg_13440_13503_0_2/RAMC/WE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -408,31 +396,31 @@ Slack (MET) :             0.963ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.575    14.997    VGA/video_mem/ram_reg_13120_13183_0_2/WCLK
-    SLICE_X6Y128         RAMD64E                                      r  VGA/video_mem/ram_reg_13120_13183_0_2/RAMC/CLK
-                         clock pessimism              0.180    15.177    
-                         clock uncertainty           -0.035    15.142    
-    SLICE_X6Y128         RAMD64E (Setup_ramd64e_CLK_WE)
-                                                     -0.533    14.609    VGA/video_mem/ram_reg_13120_13183_0_2/RAMC
+                         net (fo=1313, routed)        1.570    14.992    VGA/video_mem/ram_reg_13440_13503_0_2/WCLK
+    SLICE_X6Y124         RAMD64E                                      r  VGA/video_mem/ram_reg_13440_13503_0_2/RAMC/CLK
+                         clock pessimism              0.180    15.172    
+                         clock uncertainty           -0.035    15.137    
+    SLICE_X6Y124         RAMD64E (Setup_ramd64e_CLK_WE)
+                                                     -0.533    14.604    VGA/video_mem/ram_reg_13440_13503_0_2/RAMC
   -------------------------------------------------------------------
-                         required time                         14.609    
-                         arrival time                         -13.646    
+                         required time                         14.604    
+                         arrival time                         -13.573    
   -------------------------------------------------------------------
-                         slack                                  0.963    
+                         slack                                  1.031    
 
-Slack (MET) :             0.963ns  (required time - arrival time)
+Slack (MET) :             1.031ns  (required time - arrival time)
   Source:                 DUTdata/y_out_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_13120_13183_0_2/RAMD/WE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_13440_13503_0_2/RAMD/WE
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.410ns  (logic 2.719ns (32.331%)  route 5.691ns (67.669%))
+  Data Path Delay:        8.258ns  (logic 2.657ns (32.174%)  route 5.601ns (67.826%))
   Logic Levels:           6  (CARRY4=3 LUT2=2 LUT6=1)
-  Clock Path Skew:        -0.059ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.997ns = ( 14.997 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.236ns
+  Clock Path Skew:        -0.143ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.992ns = ( 14.992 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.315ns
     Clock Pessimism Removal (CPR):    0.180ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -449,27 +437,27 @@ Slack (MET) :             0.963ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.633     5.236    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X10Y78         FDRE                                         r  DUTdata/y_out_reg[0]/C
+                         net (fo=1313, routed)        1.712     5.315    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X3Y79          FDCE                                         r  DUTdata/y_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y78         FDRE (Prop_fdre_C_Q)         0.518     5.754 r  DUTdata/y_out_reg[0]/Q
-                         net (fo=16, routed)          0.930     6.684    VGA/y_out[0]
-    SLICE_X9Y81          LUT2 (Prop_lut2_I0_O)        0.124     6.808 r  VGA/ram_reg_0_63_0_2_i_15/O
-                         net (fo=1, routed)           0.000     6.808    DUTdata/S[0]
-    SLICE_X9Y81          CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.358 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
-                         net (fo=1, routed)           0.000     7.358    DUTdata/ram_reg_0_63_0_2_i_10_n_0
-    SLICE_X9Y82          CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.222     7.580 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
-                         net (fo=1, routed)           0.490     8.070    DUTdata/write_address1[10]
-    SLICE_X11Y82         CARRY4 (Prop_carry4_S[1]_O[2])
-                                                      0.879     8.949 f  DUTdata/ram_reg_0_63_0_2_i_7/O[2]
-                         net (fo=160, routed)         2.218    11.167    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[5]
-    SLICE_X9Y113         LUT2 (Prop_lut2_I1_O)        0.302    11.469 f  VGA/video_mem/ram_reg_12480_12543_0_2_i_2/O
-                         net (fo=25, routed)          1.110    12.579    DUTdata/ram_reg_13824_13887_0_2
-    SLICE_X4Y115         LUT6 (Prop_lut6_I0_O)        0.124    12.703 r  DUTdata/ram_reg_13120_13183_0_2_i_1/O
-                         net (fo=4, routed)           0.943    13.646    VGA/video_mem/ram_reg_13120_13183_0_2/WE
-    SLICE_X6Y128         RAMD64E                                      r  VGA/video_mem/ram_reg_13120_13183_0_2/RAMD/WE
+    SLICE_X3Y79          FDCE (Prop_fdce_C_Q)         0.456     5.771 r  DUTdata/y_out_reg[0]/Q
+                         net (fo=16, routed)          0.727     6.498    VGA/y_out[0]
+    SLICE_X1Y79          LUT2 (Prop_lut2_I0_O)        0.124     6.622 r  VGA/ram_reg_0_63_0_2_i_15/O
+                         net (fo=1, routed)           0.000     6.622    DUTdata/S[0]
+    SLICE_X1Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     7.172 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
+                         net (fo=1, routed)           0.000     7.172    DUTdata/ram_reg_0_63_0_2_i_10_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.394 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
+                         net (fo=1, routed)           0.596     7.990    DUTdata/write_address1[10]
+    SLICE_X0Y80          CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.879     8.869 f  DUTdata/ram_reg_0_63_0_2_i_7/O[2]
+                         net (fo=160, routed)         2.265    11.133    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[5]
+    SLICE_X5Y111         LUT2 (Prop_lut2_I1_O)        0.302    11.435 f  VGA/video_mem/ram_reg_12480_12543_0_2_i_2/O
+                         net (fo=25, routed)          0.867    12.302    DUTdata/ram_reg_13824_13887_0_2
+    SLICE_X7Y107         LUT6 (Prop_lut6_I0_O)        0.124    12.426 r  DUTdata/ram_reg_13440_13503_0_2_i_1/O
+                         net (fo=4, routed)           1.147    13.573    VGA/video_mem/ram_reg_13440_13503_0_2/WE
+    SLICE_X6Y124         RAMD64E                                      r  VGA/video_mem/ram_reg_13440_13503_0_2/RAMD/WE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -479,31 +467,31 @@ Slack (MET) :             0.963ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.575    14.997    VGA/video_mem/ram_reg_13120_13183_0_2/WCLK
-    SLICE_X6Y128         RAMD64E                                      r  VGA/video_mem/ram_reg_13120_13183_0_2/RAMD/CLK
-                         clock pessimism              0.180    15.177    
-                         clock uncertainty           -0.035    15.142    
-    SLICE_X6Y128         RAMD64E (Setup_ramd64e_CLK_WE)
-                                                     -0.533    14.609    VGA/video_mem/ram_reg_13120_13183_0_2/RAMD
+                         net (fo=1313, routed)        1.570    14.992    VGA/video_mem/ram_reg_13440_13503_0_2/WCLK
+    SLICE_X6Y124         RAMD64E                                      r  VGA/video_mem/ram_reg_13440_13503_0_2/RAMD/CLK
+                         clock pessimism              0.180    15.172    
+                         clock uncertainty           -0.035    15.137    
+    SLICE_X6Y124         RAMD64E (Setup_ramd64e_CLK_WE)
+                                                     -0.533    14.604    VGA/video_mem/ram_reg_13440_13503_0_2/RAMD
   -------------------------------------------------------------------
-                         required time                         14.609    
-                         arrival time                         -13.646    
+                         required time                         14.604    
+                         arrival time                         -13.573    
   -------------------------------------------------------------------
-                         slack                                  0.963    
+                         slack                                  1.031    
 
-Slack (MET) :             0.984ns  (required time - arrival time)
+Slack (MET) :             1.050ns  (required time - arrival time)
   Source:                 DUTdata/y_out_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_8256_8319_0_2/RAMA/WE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_11584_11647_0_2/RAMA/WE
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.311ns  (logic 2.916ns (35.087%)  route 5.395ns (64.913%))
-  Logic Levels:           6  (CARRY4=3 LUT2=1 LUT4=1 LUT6=1)
-  Clock Path Skew:        -0.137ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.919ns = ( 14.919 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.236ns
+  Data Path Delay:        8.168ns  (logic 2.949ns (36.102%)  route 5.219ns (63.898%))
+  Logic Levels:           6  (CARRY4=3 LUT2=2 LUT6=1)
+  Clock Path Skew:        -0.213ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.922ns = ( 14.922 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.315ns
     Clock Pessimism Removal (CPR):    0.180ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -520,27 +508,27 @@ Slack (MET) :             0.984ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.633     5.236    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X10Y78         FDRE                                         r  DUTdata/y_out_reg[0]/C
+                         net (fo=1313, routed)        1.712     5.315    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X3Y79          FDCE                                         r  DUTdata/y_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y78         FDRE (Prop_fdre_C_Q)         0.518     5.754 r  DUTdata/y_out_reg[0]/Q
-                         net (fo=16, routed)          0.930     6.684    VGA/y_out[0]
-    SLICE_X9Y81          LUT2 (Prop_lut2_I0_O)        0.124     6.808 r  VGA/ram_reg_0_63_0_2_i_15/O
-                         net (fo=1, routed)           0.000     6.808    DUTdata/S[0]
-    SLICE_X9Y81          CARRY4 (Prop_carry4_S[1]_O[2])
-                                                      0.580     7.388 r  DUTdata/ram_reg_0_63_0_2_i_10/O[2]
-                         net (fo=1, routed)           0.441     7.829    DUTdata/write_address1[8]
-    SLICE_X11Y81         CARRY4 (Prop_carry4_S[3]_CO[3])
-                                                      0.703     8.532 r  DUTdata/ram_reg_64_127_0_2_i_2/CO[3]
-                         net (fo=1, routed)           0.000     8.532    DUTdata/ram_reg_64_127_0_2_i_2_n_0
-    SLICE_X11Y82         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     8.866 f  DUTdata/ram_reg_0_63_0_2_i_7/O[1]
-                         net (fo=135, routed)         1.858    10.724    DUTdata/write_address[4]
-    SLICE_X4Y105         LUT4 (Prop_lut4_I1_O)        0.331    11.055 f  DUTdata/ram_reg_64_127_0_2_i_3/O
-                         net (fo=9, routed)           1.453    12.508    DUTdata/ram_reg_64_127_0_2_i_3_n_0
-    SLICE_X15Y115        LUT6 (Prop_lut6_I1_O)        0.326    12.834 r  DUTdata/ram_reg_8256_8319_0_2_i_1/O
-                         net (fo=4, routed)           0.712    13.546    VGA/video_mem/ram_reg_8256_8319_0_2/WE
-    SLICE_X14Y120        RAMD64E                                      r  VGA/video_mem/ram_reg_8256_8319_0_2/RAMA/WE
+    SLICE_X3Y79          FDCE (Prop_fdce_C_Q)         0.456     5.771 r  DUTdata/y_out_reg[0]/Q
+                         net (fo=16, routed)          0.727     6.498    VGA/y_out[0]
+    SLICE_X1Y79          LUT2 (Prop_lut2_I0_O)        0.124     6.622 r  VGA/ram_reg_0_63_0_2_i_15/O
+                         net (fo=1, routed)           0.000     6.622    DUTdata/S[0]
+    SLICE_X1Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     7.172 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
+                         net (fo=1, routed)           0.000     7.172    DUTdata/ram_reg_0_63_0_2_i_10_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.394 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
+                         net (fo=1, routed)           0.596     7.990    DUTdata/write_address1[10]
+    SLICE_X0Y80          CARRY4 (Prop_carry4_S[1]_O[3])
+                                                      0.939     8.929 f  DUTdata/ram_reg_0_63_0_2_i_7/O[3]
+                         net (fo=100, routed)         2.011    10.940    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[6]
+    SLICE_X5Y111         LUT2 (Prop_lut2_I1_O)        0.332    11.272 f  VGA/video_mem/ram_reg_8192_8255_0_2_i_4/O
+                         net (fo=58, routed)          1.325    12.596    DUTdata/ram_reg_11776_11839_0_2
+    SLICE_X13Y117        LUT6 (Prop_lut6_I0_O)        0.326    12.922 r  DUTdata/ram_reg_11584_11647_0_2_i_1/O
+                         net (fo=4, routed)           0.561    13.483    VGA/video_mem/ram_reg_11584_11647_0_2/WE
+    SLICE_X12Y117        RAMD64E                                      r  VGA/video_mem/ram_reg_11584_11647_0_2/RAMA/WE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -550,31 +538,31 @@ Slack (MET) :             0.984ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.497    14.919    VGA/video_mem/ram_reg_8256_8319_0_2/WCLK
-    SLICE_X14Y120        RAMD64E                                      r  VGA/video_mem/ram_reg_8256_8319_0_2/RAMA/CLK
-                         clock pessimism              0.180    15.099    
-                         clock uncertainty           -0.035    15.064    
-    SLICE_X14Y120        RAMD64E (Setup_ramd64e_CLK_WE)
-                                                     -0.533    14.531    VGA/video_mem/ram_reg_8256_8319_0_2/RAMA
+                         net (fo=1313, routed)        1.500    14.922    VGA/video_mem/ram_reg_11584_11647_0_2/WCLK
+    SLICE_X12Y117        RAMD64E                                      r  VGA/video_mem/ram_reg_11584_11647_0_2/RAMA/CLK
+                         clock pessimism              0.180    15.102    
+                         clock uncertainty           -0.035    15.067    
+    SLICE_X12Y117        RAMD64E (Setup_ramd64e_CLK_WE)
+                                                     -0.533    14.534    VGA/video_mem/ram_reg_11584_11647_0_2/RAMA
   -------------------------------------------------------------------
-                         required time                         14.531    
-                         arrival time                         -13.546    
+                         required time                         14.534    
+                         arrival time                         -13.483    
   -------------------------------------------------------------------
-                         slack                                  0.984    
+                         slack                                  1.050    
 
-Slack (MET) :             0.984ns  (required time - arrival time)
+Slack (MET) :             1.050ns  (required time - arrival time)
   Source:                 DUTdata/y_out_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_8256_8319_0_2/RAMB/WE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_11584_11647_0_2/RAMB/WE
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.311ns  (logic 2.916ns (35.087%)  route 5.395ns (64.913%))
-  Logic Levels:           6  (CARRY4=3 LUT2=1 LUT4=1 LUT6=1)
-  Clock Path Skew:        -0.137ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.919ns = ( 14.919 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.236ns
+  Data Path Delay:        8.168ns  (logic 2.949ns (36.102%)  route 5.219ns (63.898%))
+  Logic Levels:           6  (CARRY4=3 LUT2=2 LUT6=1)
+  Clock Path Skew:        -0.213ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.922ns = ( 14.922 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.315ns
     Clock Pessimism Removal (CPR):    0.180ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -591,27 +579,27 @@ Slack (MET) :             0.984ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.633     5.236    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X10Y78         FDRE                                         r  DUTdata/y_out_reg[0]/C
+                         net (fo=1313, routed)        1.712     5.315    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X3Y79          FDCE                                         r  DUTdata/y_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y78         FDRE (Prop_fdre_C_Q)         0.518     5.754 r  DUTdata/y_out_reg[0]/Q
-                         net (fo=16, routed)          0.930     6.684    VGA/y_out[0]
-    SLICE_X9Y81          LUT2 (Prop_lut2_I0_O)        0.124     6.808 r  VGA/ram_reg_0_63_0_2_i_15/O
-                         net (fo=1, routed)           0.000     6.808    DUTdata/S[0]
-    SLICE_X9Y81          CARRY4 (Prop_carry4_S[1]_O[2])
-                                                      0.580     7.388 r  DUTdata/ram_reg_0_63_0_2_i_10/O[2]
-                         net (fo=1, routed)           0.441     7.829    DUTdata/write_address1[8]
-    SLICE_X11Y81         CARRY4 (Prop_carry4_S[3]_CO[3])
-                                                      0.703     8.532 r  DUTdata/ram_reg_64_127_0_2_i_2/CO[3]
-                         net (fo=1, routed)           0.000     8.532    DUTdata/ram_reg_64_127_0_2_i_2_n_0
-    SLICE_X11Y82         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     8.866 f  DUTdata/ram_reg_0_63_0_2_i_7/O[1]
-                         net (fo=135, routed)         1.858    10.724    DUTdata/write_address[4]
-    SLICE_X4Y105         LUT4 (Prop_lut4_I1_O)        0.331    11.055 f  DUTdata/ram_reg_64_127_0_2_i_3/O
-                         net (fo=9, routed)           1.453    12.508    DUTdata/ram_reg_64_127_0_2_i_3_n_0
-    SLICE_X15Y115        LUT6 (Prop_lut6_I1_O)        0.326    12.834 r  DUTdata/ram_reg_8256_8319_0_2_i_1/O
-                         net (fo=4, routed)           0.712    13.546    VGA/video_mem/ram_reg_8256_8319_0_2/WE
-    SLICE_X14Y120        RAMD64E                                      r  VGA/video_mem/ram_reg_8256_8319_0_2/RAMB/WE
+    SLICE_X3Y79          FDCE (Prop_fdce_C_Q)         0.456     5.771 r  DUTdata/y_out_reg[0]/Q
+                         net (fo=16, routed)          0.727     6.498    VGA/y_out[0]
+    SLICE_X1Y79          LUT2 (Prop_lut2_I0_O)        0.124     6.622 r  VGA/ram_reg_0_63_0_2_i_15/O
+                         net (fo=1, routed)           0.000     6.622    DUTdata/S[0]
+    SLICE_X1Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     7.172 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
+                         net (fo=1, routed)           0.000     7.172    DUTdata/ram_reg_0_63_0_2_i_10_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.394 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
+                         net (fo=1, routed)           0.596     7.990    DUTdata/write_address1[10]
+    SLICE_X0Y80          CARRY4 (Prop_carry4_S[1]_O[3])
+                                                      0.939     8.929 f  DUTdata/ram_reg_0_63_0_2_i_7/O[3]
+                         net (fo=100, routed)         2.011    10.940    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[6]
+    SLICE_X5Y111         LUT2 (Prop_lut2_I1_O)        0.332    11.272 f  VGA/video_mem/ram_reg_8192_8255_0_2_i_4/O
+                         net (fo=58, routed)          1.325    12.596    DUTdata/ram_reg_11776_11839_0_2
+    SLICE_X13Y117        LUT6 (Prop_lut6_I0_O)        0.326    12.922 r  DUTdata/ram_reg_11584_11647_0_2_i_1/O
+                         net (fo=4, routed)           0.561    13.483    VGA/video_mem/ram_reg_11584_11647_0_2/WE
+    SLICE_X12Y117        RAMD64E                                      r  VGA/video_mem/ram_reg_11584_11647_0_2/RAMB/WE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -621,31 +609,31 @@ Slack (MET) :             0.984ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.497    14.919    VGA/video_mem/ram_reg_8256_8319_0_2/WCLK
-    SLICE_X14Y120        RAMD64E                                      r  VGA/video_mem/ram_reg_8256_8319_0_2/RAMB/CLK
-                         clock pessimism              0.180    15.099    
-                         clock uncertainty           -0.035    15.064    
-    SLICE_X14Y120        RAMD64E (Setup_ramd64e_CLK_WE)
-                                                     -0.533    14.531    VGA/video_mem/ram_reg_8256_8319_0_2/RAMB
+                         net (fo=1313, routed)        1.500    14.922    VGA/video_mem/ram_reg_11584_11647_0_2/WCLK
+    SLICE_X12Y117        RAMD64E                                      r  VGA/video_mem/ram_reg_11584_11647_0_2/RAMB/CLK
+                         clock pessimism              0.180    15.102    
+                         clock uncertainty           -0.035    15.067    
+    SLICE_X12Y117        RAMD64E (Setup_ramd64e_CLK_WE)
+                                                     -0.533    14.534    VGA/video_mem/ram_reg_11584_11647_0_2/RAMB
   -------------------------------------------------------------------
-                         required time                         14.531    
-                         arrival time                         -13.546    
+                         required time                         14.534    
+                         arrival time                         -13.483    
   -------------------------------------------------------------------
-                         slack                                  0.984    
+                         slack                                  1.050    
 
-Slack (MET) :             0.984ns  (required time - arrival time)
+Slack (MET) :             1.050ns  (required time - arrival time)
   Source:                 DUTdata/y_out_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_8256_8319_0_2/RAMC/WE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_11584_11647_0_2/RAMC/WE
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.311ns  (logic 2.916ns (35.087%)  route 5.395ns (64.913%))
-  Logic Levels:           6  (CARRY4=3 LUT2=1 LUT4=1 LUT6=1)
-  Clock Path Skew:        -0.137ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.919ns = ( 14.919 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.236ns
+  Data Path Delay:        8.168ns  (logic 2.949ns (36.102%)  route 5.219ns (63.898%))
+  Logic Levels:           6  (CARRY4=3 LUT2=2 LUT6=1)
+  Clock Path Skew:        -0.213ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.922ns = ( 14.922 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.315ns
     Clock Pessimism Removal (CPR):    0.180ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -662,27 +650,27 @@ Slack (MET) :             0.984ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.633     5.236    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X10Y78         FDRE                                         r  DUTdata/y_out_reg[0]/C
+                         net (fo=1313, routed)        1.712     5.315    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X3Y79          FDCE                                         r  DUTdata/y_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y78         FDRE (Prop_fdre_C_Q)         0.518     5.754 r  DUTdata/y_out_reg[0]/Q
-                         net (fo=16, routed)          0.930     6.684    VGA/y_out[0]
-    SLICE_X9Y81          LUT2 (Prop_lut2_I0_O)        0.124     6.808 r  VGA/ram_reg_0_63_0_2_i_15/O
-                         net (fo=1, routed)           0.000     6.808    DUTdata/S[0]
-    SLICE_X9Y81          CARRY4 (Prop_carry4_S[1]_O[2])
-                                                      0.580     7.388 r  DUTdata/ram_reg_0_63_0_2_i_10/O[2]
-                         net (fo=1, routed)           0.441     7.829    DUTdata/write_address1[8]
-    SLICE_X11Y81         CARRY4 (Prop_carry4_S[3]_CO[3])
-                                                      0.703     8.532 r  DUTdata/ram_reg_64_127_0_2_i_2/CO[3]
-                         net (fo=1, routed)           0.000     8.532    DUTdata/ram_reg_64_127_0_2_i_2_n_0
-    SLICE_X11Y82         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     8.866 f  DUTdata/ram_reg_0_63_0_2_i_7/O[1]
-                         net (fo=135, routed)         1.858    10.724    DUTdata/write_address[4]
-    SLICE_X4Y105         LUT4 (Prop_lut4_I1_O)        0.331    11.055 f  DUTdata/ram_reg_64_127_0_2_i_3/O
-                         net (fo=9, routed)           1.453    12.508    DUTdata/ram_reg_64_127_0_2_i_3_n_0
-    SLICE_X15Y115        LUT6 (Prop_lut6_I1_O)        0.326    12.834 r  DUTdata/ram_reg_8256_8319_0_2_i_1/O
-                         net (fo=4, routed)           0.712    13.546    VGA/video_mem/ram_reg_8256_8319_0_2/WE
-    SLICE_X14Y120        RAMD64E                                      r  VGA/video_mem/ram_reg_8256_8319_0_2/RAMC/WE
+    SLICE_X3Y79          FDCE (Prop_fdce_C_Q)         0.456     5.771 r  DUTdata/y_out_reg[0]/Q
+                         net (fo=16, routed)          0.727     6.498    VGA/y_out[0]
+    SLICE_X1Y79          LUT2 (Prop_lut2_I0_O)        0.124     6.622 r  VGA/ram_reg_0_63_0_2_i_15/O
+                         net (fo=1, routed)           0.000     6.622    DUTdata/S[0]
+    SLICE_X1Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     7.172 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
+                         net (fo=1, routed)           0.000     7.172    DUTdata/ram_reg_0_63_0_2_i_10_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.394 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
+                         net (fo=1, routed)           0.596     7.990    DUTdata/write_address1[10]
+    SLICE_X0Y80          CARRY4 (Prop_carry4_S[1]_O[3])
+                                                      0.939     8.929 f  DUTdata/ram_reg_0_63_0_2_i_7/O[3]
+                         net (fo=100, routed)         2.011    10.940    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[6]
+    SLICE_X5Y111         LUT2 (Prop_lut2_I1_O)        0.332    11.272 f  VGA/video_mem/ram_reg_8192_8255_0_2_i_4/O
+                         net (fo=58, routed)          1.325    12.596    DUTdata/ram_reg_11776_11839_0_2
+    SLICE_X13Y117        LUT6 (Prop_lut6_I0_O)        0.326    12.922 r  DUTdata/ram_reg_11584_11647_0_2_i_1/O
+                         net (fo=4, routed)           0.561    13.483    VGA/video_mem/ram_reg_11584_11647_0_2/WE
+    SLICE_X12Y117        RAMD64E                                      r  VGA/video_mem/ram_reg_11584_11647_0_2/RAMC/WE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -692,31 +680,31 @@ Slack (MET) :             0.984ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.497    14.919    VGA/video_mem/ram_reg_8256_8319_0_2/WCLK
-    SLICE_X14Y120        RAMD64E                                      r  VGA/video_mem/ram_reg_8256_8319_0_2/RAMC/CLK
-                         clock pessimism              0.180    15.099    
-                         clock uncertainty           -0.035    15.064    
-    SLICE_X14Y120        RAMD64E (Setup_ramd64e_CLK_WE)
-                                                     -0.533    14.531    VGA/video_mem/ram_reg_8256_8319_0_2/RAMC
+                         net (fo=1313, routed)        1.500    14.922    VGA/video_mem/ram_reg_11584_11647_0_2/WCLK
+    SLICE_X12Y117        RAMD64E                                      r  VGA/video_mem/ram_reg_11584_11647_0_2/RAMC/CLK
+                         clock pessimism              0.180    15.102    
+                         clock uncertainty           -0.035    15.067    
+    SLICE_X12Y117        RAMD64E (Setup_ramd64e_CLK_WE)
+                                                     -0.533    14.534    VGA/video_mem/ram_reg_11584_11647_0_2/RAMC
   -------------------------------------------------------------------
-                         required time                         14.531    
-                         arrival time                         -13.546    
+                         required time                         14.534    
+                         arrival time                         -13.483    
   -------------------------------------------------------------------
-                         slack                                  0.984    
+                         slack                                  1.050    
 
-Slack (MET) :             0.984ns  (required time - arrival time)
+Slack (MET) :             1.050ns  (required time - arrival time)
   Source:                 DUTdata/y_out_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_8256_8319_0_2/RAMD/WE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_11584_11647_0_2/RAMD/WE
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.311ns  (logic 2.916ns (35.087%)  route 5.395ns (64.913%))
-  Logic Levels:           6  (CARRY4=3 LUT2=1 LUT4=1 LUT6=1)
-  Clock Path Skew:        -0.137ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.919ns = ( 14.919 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.236ns
+  Data Path Delay:        8.168ns  (logic 2.949ns (36.102%)  route 5.219ns (63.898%))
+  Logic Levels:           6  (CARRY4=3 LUT2=2 LUT6=1)
+  Clock Path Skew:        -0.213ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.922ns = ( 14.922 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.315ns
     Clock Pessimism Removal (CPR):    0.180ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -733,27 +721,27 @@ Slack (MET) :             0.984ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.633     5.236    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X10Y78         FDRE                                         r  DUTdata/y_out_reg[0]/C
+                         net (fo=1313, routed)        1.712     5.315    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X3Y79          FDCE                                         r  DUTdata/y_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y78         FDRE (Prop_fdre_C_Q)         0.518     5.754 r  DUTdata/y_out_reg[0]/Q
-                         net (fo=16, routed)          0.930     6.684    VGA/y_out[0]
-    SLICE_X9Y81          LUT2 (Prop_lut2_I0_O)        0.124     6.808 r  VGA/ram_reg_0_63_0_2_i_15/O
-                         net (fo=1, routed)           0.000     6.808    DUTdata/S[0]
-    SLICE_X9Y81          CARRY4 (Prop_carry4_S[1]_O[2])
-                                                      0.580     7.388 r  DUTdata/ram_reg_0_63_0_2_i_10/O[2]
-                         net (fo=1, routed)           0.441     7.829    DUTdata/write_address1[8]
-    SLICE_X11Y81         CARRY4 (Prop_carry4_S[3]_CO[3])
-                                                      0.703     8.532 r  DUTdata/ram_reg_64_127_0_2_i_2/CO[3]
-                         net (fo=1, routed)           0.000     8.532    DUTdata/ram_reg_64_127_0_2_i_2_n_0
-    SLICE_X11Y82         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     8.866 f  DUTdata/ram_reg_0_63_0_2_i_7/O[1]
-                         net (fo=135, routed)         1.858    10.724    DUTdata/write_address[4]
-    SLICE_X4Y105         LUT4 (Prop_lut4_I1_O)        0.331    11.055 f  DUTdata/ram_reg_64_127_0_2_i_3/O
-                         net (fo=9, routed)           1.453    12.508    DUTdata/ram_reg_64_127_0_2_i_3_n_0
-    SLICE_X15Y115        LUT6 (Prop_lut6_I1_O)        0.326    12.834 r  DUTdata/ram_reg_8256_8319_0_2_i_1/O
-                         net (fo=4, routed)           0.712    13.546    VGA/video_mem/ram_reg_8256_8319_0_2/WE
-    SLICE_X14Y120        RAMD64E                                      r  VGA/video_mem/ram_reg_8256_8319_0_2/RAMD/WE
+    SLICE_X3Y79          FDCE (Prop_fdce_C_Q)         0.456     5.771 r  DUTdata/y_out_reg[0]/Q
+                         net (fo=16, routed)          0.727     6.498    VGA/y_out[0]
+    SLICE_X1Y79          LUT2 (Prop_lut2_I0_O)        0.124     6.622 r  VGA/ram_reg_0_63_0_2_i_15/O
+                         net (fo=1, routed)           0.000     6.622    DUTdata/S[0]
+    SLICE_X1Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     7.172 r  DUTdata/ram_reg_0_63_0_2_i_10/CO[3]
+                         net (fo=1, routed)           0.000     7.172    DUTdata/ram_reg_0_63_0_2_i_10_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.394 r  DUTdata/ram_reg_0_63_0_2_i_9/O[0]
+                         net (fo=1, routed)           0.596     7.990    DUTdata/write_address1[10]
+    SLICE_X0Y80          CARRY4 (Prop_carry4_S[1]_O[3])
+                                                      0.939     8.929 f  DUTdata/ram_reg_0_63_0_2_i_7/O[3]
+                         net (fo=100, routed)         2.011    10.940    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[6]
+    SLICE_X5Y111         LUT2 (Prop_lut2_I1_O)        0.332    11.272 f  VGA/video_mem/ram_reg_8192_8255_0_2_i_4/O
+                         net (fo=58, routed)          1.325    12.596    DUTdata/ram_reg_11776_11839_0_2
+    SLICE_X13Y117        LUT6 (Prop_lut6_I0_O)        0.326    12.922 r  DUTdata/ram_reg_11584_11647_0_2_i_1/O
+                         net (fo=4, routed)           0.561    13.483    VGA/video_mem/ram_reg_11584_11647_0_2/WE
+    SLICE_X12Y117        RAMD64E                                      r  VGA/video_mem/ram_reg_11584_11647_0_2/RAMD/WE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -763,32 +751,32 @@ Slack (MET) :             0.984ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.497    14.919    VGA/video_mem/ram_reg_8256_8319_0_2/WCLK
-    SLICE_X14Y120        RAMD64E                                      r  VGA/video_mem/ram_reg_8256_8319_0_2/RAMD/CLK
-                         clock pessimism              0.180    15.099    
-                         clock uncertainty           -0.035    15.064    
-    SLICE_X14Y120        RAMD64E (Setup_ramd64e_CLK_WE)
-                                                     -0.533    14.531    VGA/video_mem/ram_reg_8256_8319_0_2/RAMD
+                         net (fo=1313, routed)        1.500    14.922    VGA/video_mem/ram_reg_11584_11647_0_2/WCLK
+    SLICE_X12Y117        RAMD64E                                      r  VGA/video_mem/ram_reg_11584_11647_0_2/RAMD/CLK
+                         clock pessimism              0.180    15.102    
+                         clock uncertainty           -0.035    15.067    
+    SLICE_X12Y117        RAMD64E (Setup_ramd64e_CLK_WE)
+                                                     -0.533    14.534    VGA/video_mem/ram_reg_11584_11647_0_2/RAMD
   -------------------------------------------------------------------
-                         required time                         14.531    
-                         arrival time                         -13.546    
+                         required time                         14.534    
+                         arrival time                         -13.483    
   -------------------------------------------------------------------
-                         slack                                  0.984    
+                         slack                                  1.050    
 
-Slack (MET) :             0.993ns  (required time - arrival time)
+Slack (MET) :             1.061ns  (required time - arrival time)
   Source:                 DUTdata/y_out_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_64_127_0_2/RAMA/WE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_2688_2751_0_2/RAMA/WE
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.397ns  (logic 2.916ns (34.728%)  route 5.481ns (65.272%))
-  Logic Levels:           6  (CARRY4=3 LUT2=1 LUT4=1 LUT6=1)
-  Clock Path Skew:        -0.042ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.935ns = ( 14.935 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.236ns
-    Clock Pessimism Removal (CPR):    0.259ns
+  Data Path Delay:        8.343ns  (logic 2.508ns (30.060%)  route 5.835ns (69.940%))
+  Logic Levels:           6  (CARRY4=3 LUT2=2 LUT6=1)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.013ns = ( 15.013 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.315ns
+    Clock Pessimism Removal (CPR):    0.275ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -804,27 +792,27 @@ Slack (MET) :             0.993ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.633     5.236    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X10Y78         FDRE                                         r  DUTdata/y_out_reg[0]/C
+                         net (fo=1313, routed)        1.712     5.315    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X3Y79          FDCE                                         r  DUTdata/y_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y78         FDRE (Prop_fdre_C_Q)         0.518     5.754 r  DUTdata/y_out_reg[0]/Q
-                         net (fo=16, routed)          0.930     6.684    VGA/y_out[0]
-    SLICE_X9Y81          LUT2 (Prop_lut2_I0_O)        0.124     6.808 r  VGA/ram_reg_0_63_0_2_i_15/O
-                         net (fo=1, routed)           0.000     6.808    DUTdata/S[0]
-    SLICE_X9Y81          CARRY4 (Prop_carry4_S[1]_O[2])
-                                                      0.580     7.388 r  DUTdata/ram_reg_0_63_0_2_i_10/O[2]
-                         net (fo=1, routed)           0.441     7.829    DUTdata/write_address1[8]
-    SLICE_X11Y81         CARRY4 (Prop_carry4_S[3]_CO[3])
-                                                      0.703     8.532 r  DUTdata/ram_reg_64_127_0_2_i_2/CO[3]
-                         net (fo=1, routed)           0.000     8.532    DUTdata/ram_reg_64_127_0_2_i_2_n_0
-    SLICE_X11Y82         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     8.866 f  DUTdata/ram_reg_0_63_0_2_i_7/O[1]
-                         net (fo=135, routed)         1.858    10.724    DUTdata/write_address[4]
-    SLICE_X4Y105         LUT4 (Prop_lut4_I1_O)        0.331    11.055 f  DUTdata/ram_reg_64_127_0_2_i_3/O
-                         net (fo=9, routed)           1.642    12.697    DUTdata/ram_reg_64_127_0_2_i_3_n_0
-    SLICE_X15Y81         LUT6 (Prop_lut6_I2_O)        0.326    13.023 r  DUTdata/ram_reg_64_127_0_2_i_1/O
-                         net (fo=4, routed)           0.609    13.632    VGA/video_mem/ram_reg_64_127_0_2/WE
-    SLICE_X12Y78         RAMD64E                                      r  VGA/video_mem/ram_reg_64_127_0_2/RAMA/WE
+    SLICE_X3Y79          FDCE (Prop_fdce_C_Q)         0.456     5.771 r  DUTdata/y_out_reg[0]/Q
+                         net (fo=16, routed)          0.727     6.498    VGA/y_out[0]
+    SLICE_X1Y79          LUT2 (Prop_lut2_I0_O)        0.124     6.622 r  VGA/ram_reg_0_63_0_2_i_15/O
+                         net (fo=1, routed)           0.000     6.622    DUTdata/S[0]
+    SLICE_X1Y79          CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.580     7.202 r  DUTdata/ram_reg_0_63_0_2_i_10/O[2]
+                         net (fo=1, routed)           0.495     7.697    DUTdata/write_address1[8]
+    SLICE_X0Y79          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.703     8.400 r  DUTdata/ram_reg_64_127_0_2_i_2/CO[3]
+                         net (fo=1, routed)           0.000     8.400    DUTdata/ram_reg_64_127_0_2_i_2_n_0
+    SLICE_X0Y80          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     8.622 r  DUTdata/ram_reg_0_63_0_2_i_7/O[0]
+                         net (fo=132, routed)         2.050    10.672    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[3]
+    SLICE_X9Y110         LUT2 (Prop_lut2_I0_O)        0.299    10.971 f  VGA/video_mem/ram_reg_1664_1727_0_2_i_2/O
+                         net (fo=17, routed)          1.941    12.912    DUTdata/ram_reg_10880_10943_0_2
+    SLICE_X3Y82          LUT6 (Prop_lut6_I4_O)        0.124    13.036 r  DUTdata/ram_reg_2688_2751_0_2_i_1/O
+                         net (fo=4, routed)           0.622    13.658    VGA/video_mem/ram_reg_2688_2751_0_2/WE
+    SLICE_X2Y76          RAMD64E                                      r  VGA/video_mem/ram_reg_2688_2751_0_2/RAMA/WE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -834,32 +822,32 @@ Slack (MET) :             0.993ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.512    14.935    VGA/video_mem/ram_reg_64_127_0_2/WCLK
-    SLICE_X12Y78         RAMD64E                                      r  VGA/video_mem/ram_reg_64_127_0_2/RAMA/CLK
-                         clock pessimism              0.259    15.194    
-                         clock uncertainty           -0.035    15.158    
-    SLICE_X12Y78         RAMD64E (Setup_ramd64e_CLK_WE)
-                                                     -0.533    14.625    VGA/video_mem/ram_reg_64_127_0_2/RAMA
+                         net (fo=1313, routed)        1.590    15.013    VGA/video_mem/ram_reg_2688_2751_0_2/WCLK
+    SLICE_X2Y76          RAMD64E                                      r  VGA/video_mem/ram_reg_2688_2751_0_2/RAMA/CLK
+                         clock pessimism              0.275    15.288    
+                         clock uncertainty           -0.035    15.252    
+    SLICE_X2Y76          RAMD64E (Setup_ramd64e_CLK_WE)
+                                                     -0.533    14.719    VGA/video_mem/ram_reg_2688_2751_0_2/RAMA
   -------------------------------------------------------------------
-                         required time                         14.625    
-                         arrival time                         -13.632    
+                         required time                         14.719    
+                         arrival time                         -13.658    
   -------------------------------------------------------------------
-                         slack                                  0.993    
+                         slack                                  1.061    
 
-Slack (MET) :             0.993ns  (required time - arrival time)
+Slack (MET) :             1.061ns  (required time - arrival time)
   Source:                 DUTdata/y_out_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_64_127_0_2/RAMB/WE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_2688_2751_0_2/RAMB/WE
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.397ns  (logic 2.916ns (34.728%)  route 5.481ns (65.272%))
-  Logic Levels:           6  (CARRY4=3 LUT2=1 LUT4=1 LUT6=1)
-  Clock Path Skew:        -0.042ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.935ns = ( 14.935 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.236ns
-    Clock Pessimism Removal (CPR):    0.259ns
+  Data Path Delay:        8.343ns  (logic 2.508ns (30.060%)  route 5.835ns (69.940%))
+  Logic Levels:           6  (CARRY4=3 LUT2=2 LUT6=1)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.013ns = ( 15.013 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.315ns
+    Clock Pessimism Removal (CPR):    0.275ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -875,27 +863,27 @@ Slack (MET) :             0.993ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.633     5.236    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X10Y78         FDRE                                         r  DUTdata/y_out_reg[0]/C
+                         net (fo=1313, routed)        1.712     5.315    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X3Y79          FDCE                                         r  DUTdata/y_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y78         FDRE (Prop_fdre_C_Q)         0.518     5.754 r  DUTdata/y_out_reg[0]/Q
-                         net (fo=16, routed)          0.930     6.684    VGA/y_out[0]
-    SLICE_X9Y81          LUT2 (Prop_lut2_I0_O)        0.124     6.808 r  VGA/ram_reg_0_63_0_2_i_15/O
-                         net (fo=1, routed)           0.000     6.808    DUTdata/S[0]
-    SLICE_X9Y81          CARRY4 (Prop_carry4_S[1]_O[2])
-                                                      0.580     7.388 r  DUTdata/ram_reg_0_63_0_2_i_10/O[2]
-                         net (fo=1, routed)           0.441     7.829    DUTdata/write_address1[8]
-    SLICE_X11Y81         CARRY4 (Prop_carry4_S[3]_CO[3])
-                                                      0.703     8.532 r  DUTdata/ram_reg_64_127_0_2_i_2/CO[3]
-                         net (fo=1, routed)           0.000     8.532    DUTdata/ram_reg_64_127_0_2_i_2_n_0
-    SLICE_X11Y82         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     8.866 f  DUTdata/ram_reg_0_63_0_2_i_7/O[1]
-                         net (fo=135, routed)         1.858    10.724    DUTdata/write_address[4]
-    SLICE_X4Y105         LUT4 (Prop_lut4_I1_O)        0.331    11.055 f  DUTdata/ram_reg_64_127_0_2_i_3/O
-                         net (fo=9, routed)           1.642    12.697    DUTdata/ram_reg_64_127_0_2_i_3_n_0
-    SLICE_X15Y81         LUT6 (Prop_lut6_I2_O)        0.326    13.023 r  DUTdata/ram_reg_64_127_0_2_i_1/O
-                         net (fo=4, routed)           0.609    13.632    VGA/video_mem/ram_reg_64_127_0_2/WE
-    SLICE_X12Y78         RAMD64E                                      r  VGA/video_mem/ram_reg_64_127_0_2/RAMB/WE
+    SLICE_X3Y79          FDCE (Prop_fdce_C_Q)         0.456     5.771 r  DUTdata/y_out_reg[0]/Q
+                         net (fo=16, routed)          0.727     6.498    VGA/y_out[0]
+    SLICE_X1Y79          LUT2 (Prop_lut2_I0_O)        0.124     6.622 r  VGA/ram_reg_0_63_0_2_i_15/O
+                         net (fo=1, routed)           0.000     6.622    DUTdata/S[0]
+    SLICE_X1Y79          CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.580     7.202 r  DUTdata/ram_reg_0_63_0_2_i_10/O[2]
+                         net (fo=1, routed)           0.495     7.697    DUTdata/write_address1[8]
+    SLICE_X0Y79          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.703     8.400 r  DUTdata/ram_reg_64_127_0_2_i_2/CO[3]
+                         net (fo=1, routed)           0.000     8.400    DUTdata/ram_reg_64_127_0_2_i_2_n_0
+    SLICE_X0Y80          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     8.622 r  DUTdata/ram_reg_0_63_0_2_i_7/O[0]
+                         net (fo=132, routed)         2.050    10.672    VGA/video_mem/ram_reg_7680_7743_0_2_i_1[3]
+    SLICE_X9Y110         LUT2 (Prop_lut2_I0_O)        0.299    10.971 f  VGA/video_mem/ram_reg_1664_1727_0_2_i_2/O
+                         net (fo=17, routed)          1.941    12.912    DUTdata/ram_reg_10880_10943_0_2
+    SLICE_X3Y82          LUT6 (Prop_lut6_I4_O)        0.124    13.036 r  DUTdata/ram_reg_2688_2751_0_2_i_1/O
+                         net (fo=4, routed)           0.622    13.658    VGA/video_mem/ram_reg_2688_2751_0_2/WE
+    SLICE_X2Y76          RAMD64E                                      r  VGA/video_mem/ram_reg_2688_2751_0_2/RAMB/WE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -905,17 +893,17 @@ Slack (MET) :             0.993ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        1.512    14.935    VGA/video_mem/ram_reg_64_127_0_2/WCLK
-    SLICE_X12Y78         RAMD64E                                      r  VGA/video_mem/ram_reg_64_127_0_2/RAMB/CLK
-                         clock pessimism              0.259    15.194    
-                         clock uncertainty           -0.035    15.158    
-    SLICE_X12Y78         RAMD64E (Setup_ramd64e_CLK_WE)
-                                                     -0.533    14.625    VGA/video_mem/ram_reg_64_127_0_2/RAMB
+                         net (fo=1313, routed)        1.590    15.013    VGA/video_mem/ram_reg_2688_2751_0_2/WCLK
+    SLICE_X2Y76          RAMD64E                                      r  VGA/video_mem/ram_reg_2688_2751_0_2/RAMB/CLK
+                         clock pessimism              0.275    15.288    
+                         clock uncertainty           -0.035    15.252    
+    SLICE_X2Y76          RAMD64E (Setup_ramd64e_CLK_WE)
+                                                     -0.533    14.719    VGA/video_mem/ram_reg_2688_2751_0_2/RAMB
   -------------------------------------------------------------------
-                         required time                         14.625    
-                         arrival time                         -13.632    
+                         required time                         14.719    
+                         arrival time                         -13.658    
   -------------------------------------------------------------------
-                         slack                                  0.993    
+                         slack                                  1.061    
 
 
 
@@ -923,419 +911,19 @@ Slack (MET) :             0.993ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.049ns  (arrival time - required time)
-  Source:                 DUTdata/x_out_reg[0]_rep__1/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_3776_3839_0_2/RAMA/WADR0
+Slack (MET) :             0.072ns  (arrival time - required time)
+  Source:                 DUTdata/x_out_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_1216_1279_0_2/RAMA/WADR0
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.372ns  (logic 0.141ns (37.940%)  route 0.231ns (62.060%))
+  Data Path Delay:        0.421ns  (logic 0.141ns (33.482%)  route 0.280ns (66.518%))
   Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.998ns
-    Source Clock Delay      (SCD):    1.484ns
-    Clock Pessimism Removal (CPR):    0.500ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.565     1.484    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X9Y77          FDRE                                         r  DUTdata/x_out_reg[0]_rep__1/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y77          FDRE (Prop_fdre_C_Q)         0.141     1.625 r  DUTdata/x_out_reg[0]_rep__1/Q
-                         net (fo=430, routed)         0.231     1.856    VGA/video_mem/ram_reg_3776_3839_0_2/ADDRD0
-    SLICE_X8Y77          RAMD64E                                      r  VGA/video_mem/ram_reg_3776_3839_0_2/RAMA/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.833     1.998    VGA/video_mem/ram_reg_3776_3839_0_2/WCLK
-    SLICE_X8Y77          RAMD64E                                      r  VGA/video_mem/ram_reg_3776_3839_0_2/RAMA/CLK
-                         clock pessimism             -0.500     1.497    
-    SLICE_X8Y77          RAMD64E (Hold_ramd64e_CLK_WADR0)
-                                                      0.310     1.807    VGA/video_mem/ram_reg_3776_3839_0_2/RAMA
-  -------------------------------------------------------------------
-                         required time                         -1.807    
-                         arrival time                           1.856    
-  -------------------------------------------------------------------
-                         slack                                  0.049    
-
-Slack (MET) :             0.049ns  (arrival time - required time)
-  Source:                 DUTdata/x_out_reg[0]_rep__1/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_3776_3839_0_2/RAMB/WADR0
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.372ns  (logic 0.141ns (37.940%)  route 0.231ns (62.060%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.998ns
-    Source Clock Delay      (SCD):    1.484ns
-    Clock Pessimism Removal (CPR):    0.500ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.565     1.484    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X9Y77          FDRE                                         r  DUTdata/x_out_reg[0]_rep__1/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y77          FDRE (Prop_fdre_C_Q)         0.141     1.625 r  DUTdata/x_out_reg[0]_rep__1/Q
-                         net (fo=430, routed)         0.231     1.856    VGA/video_mem/ram_reg_3776_3839_0_2/ADDRD0
-    SLICE_X8Y77          RAMD64E                                      r  VGA/video_mem/ram_reg_3776_3839_0_2/RAMB/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.833     1.998    VGA/video_mem/ram_reg_3776_3839_0_2/WCLK
-    SLICE_X8Y77          RAMD64E                                      r  VGA/video_mem/ram_reg_3776_3839_0_2/RAMB/CLK
-                         clock pessimism             -0.500     1.497    
-    SLICE_X8Y77          RAMD64E (Hold_ramd64e_CLK_WADR0)
-                                                      0.310     1.807    VGA/video_mem/ram_reg_3776_3839_0_2/RAMB
-  -------------------------------------------------------------------
-                         required time                         -1.807    
-                         arrival time                           1.856    
-  -------------------------------------------------------------------
-                         slack                                  0.049    
-
-Slack (MET) :             0.049ns  (arrival time - required time)
-  Source:                 DUTdata/x_out_reg[0]_rep__1/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_3776_3839_0_2/RAMC/WADR0
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.372ns  (logic 0.141ns (37.940%)  route 0.231ns (62.060%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.998ns
-    Source Clock Delay      (SCD):    1.484ns
-    Clock Pessimism Removal (CPR):    0.500ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.565     1.484    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X9Y77          FDRE                                         r  DUTdata/x_out_reg[0]_rep__1/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y77          FDRE (Prop_fdre_C_Q)         0.141     1.625 r  DUTdata/x_out_reg[0]_rep__1/Q
-                         net (fo=430, routed)         0.231     1.856    VGA/video_mem/ram_reg_3776_3839_0_2/ADDRD0
-    SLICE_X8Y77          RAMD64E                                      r  VGA/video_mem/ram_reg_3776_3839_0_2/RAMC/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.833     1.998    VGA/video_mem/ram_reg_3776_3839_0_2/WCLK
-    SLICE_X8Y77          RAMD64E                                      r  VGA/video_mem/ram_reg_3776_3839_0_2/RAMC/CLK
-                         clock pessimism             -0.500     1.497    
-    SLICE_X8Y77          RAMD64E (Hold_ramd64e_CLK_WADR0)
-                                                      0.310     1.807    VGA/video_mem/ram_reg_3776_3839_0_2/RAMC
-  -------------------------------------------------------------------
-                         required time                         -1.807    
-                         arrival time                           1.856    
-  -------------------------------------------------------------------
-                         slack                                  0.049    
-
-Slack (MET) :             0.049ns  (arrival time - required time)
-  Source:                 DUTdata/x_out_reg[0]_rep__1/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_3776_3839_0_2/RAMD/WADR0
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.372ns  (logic 0.141ns (37.940%)  route 0.231ns (62.060%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.998ns
-    Source Clock Delay      (SCD):    1.484ns
-    Clock Pessimism Removal (CPR):    0.500ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.565     1.484    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X9Y77          FDRE                                         r  DUTdata/x_out_reg[0]_rep__1/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y77          FDRE (Prop_fdre_C_Q)         0.141     1.625 r  DUTdata/x_out_reg[0]_rep__1/Q
-                         net (fo=430, routed)         0.231     1.856    VGA/video_mem/ram_reg_3776_3839_0_2/ADDRD0
-    SLICE_X8Y77          RAMD64E                                      r  VGA/video_mem/ram_reg_3776_3839_0_2/RAMD/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.833     1.998    VGA/video_mem/ram_reg_3776_3839_0_2/WCLK
-    SLICE_X8Y77          RAMD64E                                      r  VGA/video_mem/ram_reg_3776_3839_0_2/RAMD/CLK
-                         clock pessimism             -0.500     1.497    
-    SLICE_X8Y77          RAMD64E (Hold_ramd64e_CLK_WADR0)
-                                                      0.310     1.807    VGA/video_mem/ram_reg_3776_3839_0_2/RAMD
-  -------------------------------------------------------------------
-                         required time                         -1.807    
-                         arrival time                           1.856    
-  -------------------------------------------------------------------
-                         slack                                  0.049    
-
-Slack (MET) :             0.080ns  (arrival time - required time)
-  Source:                 DUTdata/x_out_reg[1]_rep/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_1216_1279_0_2/RAMA/WADR1
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.402ns  (logic 0.141ns (35.096%)  route 0.261ns (64.904%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.029ns
-    Source Clock Delay      (SCD):    1.515ns
-    Clock Pessimism Removal (CPR):    0.500ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.596     1.515    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X4Y81          FDRE                                         r  DUTdata/x_out_reg[1]_rep/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X4Y81          FDRE (Prop_fdre_C_Q)         0.141     1.656 r  DUTdata/x_out_reg[1]_rep/Q
-                         net (fo=320, routed)         0.261     1.917    VGA/video_mem/ram_reg_1216_1279_0_2/ADDRD1
-    SLICE_X6Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMA/WADR1
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.864     2.029    VGA/video_mem/ram_reg_1216_1279_0_2/WCLK
-    SLICE_X6Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMA/CLK
-                         clock pessimism             -0.500     1.528    
-    SLICE_X6Y80          RAMD64E (Hold_ramd64e_CLK_WADR1)
-                                                      0.309     1.837    VGA/video_mem/ram_reg_1216_1279_0_2/RAMA
-  -------------------------------------------------------------------
-                         required time                         -1.837    
-                         arrival time                           1.917    
-  -------------------------------------------------------------------
-                         slack                                  0.080    
-
-Slack (MET) :             0.080ns  (arrival time - required time)
-  Source:                 DUTdata/x_out_reg[1]_rep/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_1216_1279_0_2/RAMB/WADR1
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.402ns  (logic 0.141ns (35.096%)  route 0.261ns (64.904%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.029ns
-    Source Clock Delay      (SCD):    1.515ns
-    Clock Pessimism Removal (CPR):    0.500ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.596     1.515    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X4Y81          FDRE                                         r  DUTdata/x_out_reg[1]_rep/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X4Y81          FDRE (Prop_fdre_C_Q)         0.141     1.656 r  DUTdata/x_out_reg[1]_rep/Q
-                         net (fo=320, routed)         0.261     1.917    VGA/video_mem/ram_reg_1216_1279_0_2/ADDRD1
-    SLICE_X6Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMB/WADR1
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.864     2.029    VGA/video_mem/ram_reg_1216_1279_0_2/WCLK
-    SLICE_X6Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMB/CLK
-                         clock pessimism             -0.500     1.528    
-    SLICE_X6Y80          RAMD64E (Hold_ramd64e_CLK_WADR1)
-                                                      0.309     1.837    VGA/video_mem/ram_reg_1216_1279_0_2/RAMB
-  -------------------------------------------------------------------
-                         required time                         -1.837    
-                         arrival time                           1.917    
-  -------------------------------------------------------------------
-                         slack                                  0.080    
-
-Slack (MET) :             0.080ns  (arrival time - required time)
-  Source:                 DUTdata/x_out_reg[1]_rep/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_1216_1279_0_2/RAMC/WADR1
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.402ns  (logic 0.141ns (35.096%)  route 0.261ns (64.904%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.029ns
-    Source Clock Delay      (SCD):    1.515ns
-    Clock Pessimism Removal (CPR):    0.500ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.596     1.515    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X4Y81          FDRE                                         r  DUTdata/x_out_reg[1]_rep/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X4Y81          FDRE (Prop_fdre_C_Q)         0.141     1.656 r  DUTdata/x_out_reg[1]_rep/Q
-                         net (fo=320, routed)         0.261     1.917    VGA/video_mem/ram_reg_1216_1279_0_2/ADDRD1
-    SLICE_X6Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMC/WADR1
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.864     2.029    VGA/video_mem/ram_reg_1216_1279_0_2/WCLK
-    SLICE_X6Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMC/CLK
-                         clock pessimism             -0.500     1.528    
-    SLICE_X6Y80          RAMD64E (Hold_ramd64e_CLK_WADR1)
-                                                      0.309     1.837    VGA/video_mem/ram_reg_1216_1279_0_2/RAMC
-  -------------------------------------------------------------------
-                         required time                         -1.837    
-                         arrival time                           1.917    
-  -------------------------------------------------------------------
-                         slack                                  0.080    
-
-Slack (MET) :             0.080ns  (arrival time - required time)
-  Source:                 DUTdata/x_out_reg[1]_rep/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_1216_1279_0_2/RAMD/WADR1
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.402ns  (logic 0.141ns (35.096%)  route 0.261ns (64.904%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.029ns
-    Source Clock Delay      (SCD):    1.515ns
-    Clock Pessimism Removal (CPR):    0.500ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.596     1.515    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X4Y81          FDRE                                         r  DUTdata/x_out_reg[1]_rep/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X4Y81          FDRE (Prop_fdre_C_Q)         0.141     1.656 r  DUTdata/x_out_reg[1]_rep/Q
-                         net (fo=320, routed)         0.261     1.917    VGA/video_mem/ram_reg_1216_1279_0_2/ADDRD1
-    SLICE_X6Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMD/WADR1
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK100MHZ (IN)
-                         net (fo=0)                   0.000     0.000    CLK100MHZ
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.864     2.029    VGA/video_mem/ram_reg_1216_1279_0_2/WCLK
-    SLICE_X6Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMD/CLK
-                         clock pessimism             -0.500     1.528    
-    SLICE_X6Y80          RAMD64E (Hold_ramd64e_CLK_WADR1)
-                                                      0.309     1.837    VGA/video_mem/ram_reg_1216_1279_0_2/RAMD
-  -------------------------------------------------------------------
-                         required time                         -1.837    
-                         arrival time                           1.917    
-  -------------------------------------------------------------------
-                         slack                                  0.080    
-
-Slack (MET) :             0.097ns  (arrival time - required time)
-  Source:                 DUTdata/x_out_reg[0]_rep__1/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_1152_1215_0_2/RAMA/WADR0
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.439ns  (logic 0.141ns (32.132%)  route 0.298ns (67.868%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.032ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.996ns
-    Source Clock Delay      (SCD):    1.484ns
+  Clock Path Skew:        0.039ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.032ns
+    Source Clock Delay      (SCD):    1.513ns
     Clock Pessimism Removal (CPR):    0.479ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1347,12 +935,12 @@ Slack (MET) :             0.097ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.565     1.484    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X9Y77          FDRE                                         r  DUTdata/x_out_reg[0]_rep__1/C
+                         net (fo=1313, routed)        0.594     1.513    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X4Y79          FDCE                                         r  DUTdata/x_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y77          FDRE (Prop_fdre_C_Q)         0.141     1.625 r  DUTdata/x_out_reg[0]_rep__1/Q
-                         net (fo=430, routed)         0.298     1.923    VGA/video_mem/ram_reg_1152_1215_0_2/ADDRD0
-    SLICE_X10Y76         RAMD64E                                      r  VGA/video_mem/ram_reg_1152_1215_0_2/RAMA/WADR0
+    SLICE_X4Y79          FDCE (Prop_fdce_C_Q)         0.141     1.654 r  DUTdata/x_out_reg[0]/Q
+                         net (fo=320, routed)         0.280     1.934    VGA/video_mem/ram_reg_1216_1279_0_2/ADDRD0
+    SLICE_X2Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMA/WADR0
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1362,30 +950,30 @@ Slack (MET) :             0.097ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.831     1.996    VGA/video_mem/ram_reg_1152_1215_0_2/WCLK
-    SLICE_X10Y76         RAMD64E                                      r  VGA/video_mem/ram_reg_1152_1215_0_2/RAMA/CLK
-                         clock pessimism             -0.479     1.516    
-    SLICE_X10Y76         RAMD64E (Hold_ramd64e_CLK_WADR0)
-                                                      0.310     1.826    VGA/video_mem/ram_reg_1152_1215_0_2/RAMA
+                         net (fo=1313, routed)        0.867     2.032    VGA/video_mem/ram_reg_1216_1279_0_2/WCLK
+    SLICE_X2Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMA/CLK
+                         clock pessimism             -0.479     1.552    
+    SLICE_X2Y80          RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.862    VGA/video_mem/ram_reg_1216_1279_0_2/RAMA
   -------------------------------------------------------------------
-                         required time                         -1.826    
-                         arrival time                           1.923    
+                         required time                         -1.862    
+                         arrival time                           1.934    
   -------------------------------------------------------------------
-                         slack                                  0.097    
+                         slack                                  0.072    
 
-Slack (MET) :             0.097ns  (arrival time - required time)
-  Source:                 DUTdata/x_out_reg[0]_rep__1/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            VGA/video_mem/ram_reg_1152_1215_0_2/RAMB/WADR0
+Slack (MET) :             0.072ns  (arrival time - required time)
+  Source:                 DUTdata/x_out_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_1216_1279_0_2/RAMB/WADR0
                             (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.439ns  (logic 0.141ns (32.132%)  route 0.298ns (67.868%))
+  Data Path Delay:        0.421ns  (logic 0.141ns (33.482%)  route 0.280ns (66.518%))
   Logic Levels:           0  
-  Clock Path Skew:        0.032ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.996ns
-    Source Clock Delay      (SCD):    1.484ns
+  Clock Path Skew:        0.039ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.032ns
+    Source Clock Delay      (SCD):    1.513ns
     Clock Pessimism Removal (CPR):    0.479ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1397,12 +985,12 @@ Slack (MET) :             0.097ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.565     1.484    DUTdata/CLK100MHZ_IBUF_BUFG
-    SLICE_X9Y77          FDRE                                         r  DUTdata/x_out_reg[0]_rep__1/C
+                         net (fo=1313, routed)        0.594     1.513    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X4Y79          FDCE                                         r  DUTdata/x_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y77          FDRE (Prop_fdre_C_Q)         0.141     1.625 r  DUTdata/x_out_reg[0]_rep__1/Q
-                         net (fo=430, routed)         0.298     1.923    VGA/video_mem/ram_reg_1152_1215_0_2/ADDRD0
-    SLICE_X10Y76         RAMD64E                                      r  VGA/video_mem/ram_reg_1152_1215_0_2/RAMB/WADR0
+    SLICE_X4Y79          FDCE (Prop_fdce_C_Q)         0.141     1.654 r  DUTdata/x_out_reg[0]/Q
+                         net (fo=320, routed)         0.280     1.934    VGA/video_mem/ram_reg_1216_1279_0_2/ADDRD0
+    SLICE_X2Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMB/WADR0
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1412,16 +1000,416 @@ Slack (MET) :             0.097ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
                          net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
-                         net (fo=1357, routed)        0.831     1.996    VGA/video_mem/ram_reg_1152_1215_0_2/WCLK
-    SLICE_X10Y76         RAMD64E                                      r  VGA/video_mem/ram_reg_1152_1215_0_2/RAMB/CLK
-                         clock pessimism             -0.479     1.516    
-    SLICE_X10Y76         RAMD64E (Hold_ramd64e_CLK_WADR0)
-                                                      0.310     1.826    VGA/video_mem/ram_reg_1152_1215_0_2/RAMB
+                         net (fo=1313, routed)        0.867     2.032    VGA/video_mem/ram_reg_1216_1279_0_2/WCLK
+    SLICE_X2Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMB/CLK
+                         clock pessimism             -0.479     1.552    
+    SLICE_X2Y80          RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.862    VGA/video_mem/ram_reg_1216_1279_0_2/RAMB
   -------------------------------------------------------------------
-                         required time                         -1.826    
-                         arrival time                           1.923    
+                         required time                         -1.862    
+                         arrival time                           1.934    
   -------------------------------------------------------------------
-                         slack                                  0.097    
+                         slack                                  0.072    
+
+Slack (MET) :             0.072ns  (arrival time - required time)
+  Source:                 DUTdata/x_out_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_1216_1279_0_2/RAMC/WADR0
+                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.421ns  (logic 0.141ns (33.482%)  route 0.280ns (66.518%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.039ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.032ns
+    Source Clock Delay      (SCD):    1.513ns
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.594     1.513    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X4Y79          FDCE                                         r  DUTdata/x_out_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y79          FDCE (Prop_fdce_C_Q)         0.141     1.654 r  DUTdata/x_out_reg[0]/Q
+                         net (fo=320, routed)         0.280     1.934    VGA/video_mem/ram_reg_1216_1279_0_2/ADDRD0
+    SLICE_X2Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMC/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.867     2.032    VGA/video_mem/ram_reg_1216_1279_0_2/WCLK
+    SLICE_X2Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMC/CLK
+                         clock pessimism             -0.479     1.552    
+    SLICE_X2Y80          RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.862    VGA/video_mem/ram_reg_1216_1279_0_2/RAMC
+  -------------------------------------------------------------------
+                         required time                         -1.862    
+                         arrival time                           1.934    
+  -------------------------------------------------------------------
+                         slack                                  0.072    
+
+Slack (MET) :             0.072ns  (arrival time - required time)
+  Source:                 DUTdata/x_out_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_1216_1279_0_2/RAMD/WADR0
+                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.421ns  (logic 0.141ns (33.482%)  route 0.280ns (66.518%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.039ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.032ns
+    Source Clock Delay      (SCD):    1.513ns
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.594     1.513    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X4Y79          FDCE                                         r  DUTdata/x_out_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y79          FDCE (Prop_fdce_C_Q)         0.141     1.654 r  DUTdata/x_out_reg[0]/Q
+                         net (fo=320, routed)         0.280     1.934    VGA/video_mem/ram_reg_1216_1279_0_2/ADDRD0
+    SLICE_X2Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMD/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.867     2.032    VGA/video_mem/ram_reg_1216_1279_0_2/WCLK
+    SLICE_X2Y80          RAMD64E                                      r  VGA/video_mem/ram_reg_1216_1279_0_2/RAMD/CLK
+                         clock pessimism             -0.479     1.552    
+    SLICE_X2Y80          RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.862    VGA/video_mem/ram_reg_1216_1279_0_2/RAMD
+  -------------------------------------------------------------------
+                         required time                         -1.862    
+                         arrival time                           1.934    
+  -------------------------------------------------------------------
+                         slack                                  0.072    
+
+Slack (MET) :             0.073ns  (arrival time - required time)
+  Source:                 DUTdata/colorOut_reg[0]_rep__1/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_12992_13055_0_2/RAMA/I
+                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.233ns  (logic 0.141ns (60.404%)  route 0.092ns (39.596%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.006ns
+    Source Clock Delay      (SCD):    1.489ns
+    Clock Pessimism Removal (CPR):    0.503ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.570     1.489    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X9Y101         FDCE                                         r  DUTdata/colorOut_reg[0]_rep__1/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y101         FDCE (Prop_fdce_C_Q)         0.141     1.630 r  DUTdata/colorOut_reg[0]_rep__1/Q
+                         net (fo=64, routed)          0.092     1.723    VGA/video_mem/ram_reg_12992_13055_0_2/DIA
+    SLICE_X8Y101         RAMD64E                                      r  VGA/video_mem/ram_reg_12992_13055_0_2/RAMA/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.841     2.006    VGA/video_mem/ram_reg_12992_13055_0_2/WCLK
+    SLICE_X8Y101         RAMD64E                                      r  VGA/video_mem/ram_reg_12992_13055_0_2/RAMA/CLK
+                         clock pessimism             -0.503     1.502    
+    SLICE_X8Y101         RAMD64E (Hold_ramd64e_CLK_I)
+                                                      0.147     1.649    VGA/video_mem/ram_reg_12992_13055_0_2/RAMA
+  -------------------------------------------------------------------
+                         required time                         -1.649    
+                         arrival time                           1.723    
+  -------------------------------------------------------------------
+                         slack                                  0.073    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 DUTdata/x_out_reg[2]_rep/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_1728_1791_0_2/RAMA/WADR2
+                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.591%)  route 0.206ns (59.409%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.027ns
+    Source Clock Delay      (SCD):    1.513ns
+    Clock Pessimism Removal (CPR):    0.500ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.594     1.513    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X7Y79          FDCE                                         r  DUTdata/x_out_reg[2]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y79          FDCE (Prop_fdce_C_Q)         0.141     1.654 r  DUTdata/x_out_reg[2]_rep/Q
+                         net (fo=320, routed)         0.206     1.861    VGA/video_mem/ram_reg_1728_1791_0_2/ADDRD2
+    SLICE_X6Y78          RAMD64E                                      r  VGA/video_mem/ram_reg_1728_1791_0_2/RAMA/WADR2
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.862     2.027    VGA/video_mem/ram_reg_1728_1791_0_2/WCLK
+    SLICE_X6Y78          RAMD64E                                      r  VGA/video_mem/ram_reg_1728_1791_0_2/RAMA/CLK
+                         clock pessimism             -0.500     1.526    
+    SLICE_X6Y78          RAMD64E (Hold_ramd64e_CLK_WADR2)
+                                                      0.254     1.780    VGA/video_mem/ram_reg_1728_1791_0_2/RAMA
+  -------------------------------------------------------------------
+                         required time                         -1.780    
+                         arrival time                           1.861    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 DUTdata/x_out_reg[2]_rep/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_1728_1791_0_2/RAMB/WADR2
+                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.591%)  route 0.206ns (59.409%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.027ns
+    Source Clock Delay      (SCD):    1.513ns
+    Clock Pessimism Removal (CPR):    0.500ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.594     1.513    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X7Y79          FDCE                                         r  DUTdata/x_out_reg[2]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y79          FDCE (Prop_fdce_C_Q)         0.141     1.654 r  DUTdata/x_out_reg[2]_rep/Q
+                         net (fo=320, routed)         0.206     1.861    VGA/video_mem/ram_reg_1728_1791_0_2/ADDRD2
+    SLICE_X6Y78          RAMD64E                                      r  VGA/video_mem/ram_reg_1728_1791_0_2/RAMB/WADR2
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.862     2.027    VGA/video_mem/ram_reg_1728_1791_0_2/WCLK
+    SLICE_X6Y78          RAMD64E                                      r  VGA/video_mem/ram_reg_1728_1791_0_2/RAMB/CLK
+                         clock pessimism             -0.500     1.526    
+    SLICE_X6Y78          RAMD64E (Hold_ramd64e_CLK_WADR2)
+                                                      0.254     1.780    VGA/video_mem/ram_reg_1728_1791_0_2/RAMB
+  -------------------------------------------------------------------
+                         required time                         -1.780    
+                         arrival time                           1.861    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 DUTdata/x_out_reg[2]_rep/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_1728_1791_0_2/RAMC/WADR2
+                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.591%)  route 0.206ns (59.409%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.027ns
+    Source Clock Delay      (SCD):    1.513ns
+    Clock Pessimism Removal (CPR):    0.500ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.594     1.513    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X7Y79          FDCE                                         r  DUTdata/x_out_reg[2]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y79          FDCE (Prop_fdce_C_Q)         0.141     1.654 r  DUTdata/x_out_reg[2]_rep/Q
+                         net (fo=320, routed)         0.206     1.861    VGA/video_mem/ram_reg_1728_1791_0_2/ADDRD2
+    SLICE_X6Y78          RAMD64E                                      r  VGA/video_mem/ram_reg_1728_1791_0_2/RAMC/WADR2
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.862     2.027    VGA/video_mem/ram_reg_1728_1791_0_2/WCLK
+    SLICE_X6Y78          RAMD64E                                      r  VGA/video_mem/ram_reg_1728_1791_0_2/RAMC/CLK
+                         clock pessimism             -0.500     1.526    
+    SLICE_X6Y78          RAMD64E (Hold_ramd64e_CLK_WADR2)
+                                                      0.254     1.780    VGA/video_mem/ram_reg_1728_1791_0_2/RAMC
+  -------------------------------------------------------------------
+                         required time                         -1.780    
+                         arrival time                           1.861    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 DUTdata/x_out_reg[2]_rep/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_1728_1791_0_2/RAMD/WADR2
+                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.591%)  route 0.206ns (59.409%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.027ns
+    Source Clock Delay      (SCD):    1.513ns
+    Clock Pessimism Removal (CPR):    0.500ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.594     1.513    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X7Y79          FDCE                                         r  DUTdata/x_out_reg[2]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y79          FDCE (Prop_fdce_C_Q)         0.141     1.654 r  DUTdata/x_out_reg[2]_rep/Q
+                         net (fo=320, routed)         0.206     1.861    VGA/video_mem/ram_reg_1728_1791_0_2/ADDRD2
+    SLICE_X6Y78          RAMD64E                                      r  VGA/video_mem/ram_reg_1728_1791_0_2/RAMD/WADR2
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.862     2.027    VGA/video_mem/ram_reg_1728_1791_0_2/WCLK
+    SLICE_X6Y78          RAMD64E                                      r  VGA/video_mem/ram_reg_1728_1791_0_2/RAMD/CLK
+                         clock pessimism             -0.500     1.526    
+    SLICE_X6Y78          RAMD64E (Hold_ramd64e_CLK_WADR2)
+                                                      0.254     1.780    VGA/video_mem/ram_reg_1728_1791_0_2/RAMD
+  -------------------------------------------------------------------
+                         required time                         -1.780    
+                         arrival time                           1.861    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.084ns  (arrival time - required time)
+  Source:                 DUTdata/colorOut_reg[0]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            VGA/video_mem/ram_reg_17024_17087_0_2/RAMA/I
+                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.271ns  (logic 0.141ns (52.119%)  route 0.130ns (47.881%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.040ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.043ns
+    Source Clock Delay      (SCD):    1.523ns
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.604     1.523    DUTdata/CLK100MHZ_IBUF_BUFG
+    SLICE_X4Y99          FDCE                                         r  DUTdata/colorOut_reg[0]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y99          FDCE (Prop_fdce_C_Q)         0.141     1.664 r  DUTdata/colorOut_reg[0]_rep__2/Q
+                         net (fo=44, routed)          0.130     1.794    VGA/video_mem/ram_reg_17024_17087_0_2/DIA
+    SLICE_X2Y99          RAMD64E                                      r  VGA/video_mem/ram_reg_17024_17087_0_2/RAMA/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=1313, routed)        0.878     2.043    VGA/video_mem/ram_reg_17024_17087_0_2/WCLK
+    SLICE_X2Y99          RAMD64E                                      r  VGA/video_mem/ram_reg_17024_17087_0_2/RAMA/CLK
+                         clock pessimism             -0.479     1.563    
+    SLICE_X2Y99          RAMD64E (Hold_ramd64e_CLK_I)
+                                                      0.147     1.710    VGA/video_mem/ram_reg_17024_17087_0_2/RAMA
+  -------------------------------------------------------------------
+                         required time                         -1.710    
+                         arrival time                           1.794    
+  -------------------------------------------------------------------
+                         slack                                  0.084    
 
 
 
@@ -1436,35 +1424,35 @@ Sources:            { CLK100MHZ }
 
 Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
 Min Period        n/a     BUFG/I       n/a            2.155         10.000      7.845      BUFGCTRL_X0Y16  CLK100MHZ_IBUF_BUFG_inst/I
-Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X8Y75     DUTctrl/current_state_reg[0]/C
-Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X8Y75     DUTctrl/current_state_reg[1]/C
-Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X7Y93     DUTdata/colorOut_reg[0]/C
-Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X7Y96     DUTdata/colorOut_reg[0]_rep/C
-Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X7Y101    DUTdata/colorOut_reg[0]_rep__0/C
-Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X5Y101    DUTdata/colorOut_reg[0]_rep__1/C
-Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X7Y99     DUTdata/colorOut_reg[0]_rep__2/C
-Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X7Y93     DUTdata/colorOut_reg[1]/C
-Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X8Y97     DUTdata/colorOut_reg[1]_rep/C
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X8Y92     VGA/video_mem/ram_reg_7360_7423_0_2/RAMD/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y95    VGA/video_mem/ram_reg_7424_7487_0_2/RAMA/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y95    VGA/video_mem/ram_reg_7424_7487_0_2/RAMB/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y95    VGA/video_mem/ram_reg_7424_7487_0_2/RAMC/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y95    VGA/video_mem/ram_reg_7424_7487_0_2/RAMD/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y92    VGA/video_mem/ram_reg_6208_6271_0_2/RAMA/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y92    VGA/video_mem/ram_reg_6208_6271_0_2/RAMB/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y92    VGA/video_mem/ram_reg_6208_6271_0_2/RAMC/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y92    VGA/video_mem/ram_reg_6208_6271_0_2/RAMD/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y91    VGA/video_mem/ram_reg_5120_5183_0_2/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y97    VGA/video_mem/ram_reg_15168_15231_0_2/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y97    VGA/video_mem/ram_reg_15168_15231_0_2/RAMB/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y97    VGA/video_mem/ram_reg_15168_15231_0_2/RAMC/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X2Y83     VGA/video_mem/ram_reg_3392_3455_0_2/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X2Y83     VGA/video_mem/ram_reg_3392_3455_0_2/RAMB/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y97    VGA/video_mem/ram_reg_15168_15231_0_2/RAMD/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X12Y99    VGA/video_mem/ram_reg_15232_15295_0_2/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X12Y99    VGA/video_mem/ram_reg_15232_15295_0_2/RAMB/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X12Y99    VGA/video_mem/ram_reg_15232_15295_0_2/RAMC/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X12Y99    VGA/video_mem/ram_reg_15232_15295_0_2/RAMD/CLK
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X0Y85     DUTctrl/current_state_reg[0]/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X0Y85     DUTctrl/current_state_reg[1]/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X9Y90     DUTdata/colorOut_reg[0]/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X9Y90     DUTdata/colorOut_reg[0]_rep/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X9Y103    DUTdata/colorOut_reg[0]_rep__0/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X9Y101    DUTdata/colorOut_reg[0]_rep__1/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X4Y99     DUTdata/colorOut_reg[0]_rep__2/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X9Y90     DUTdata/colorOut_reg[1]/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X11Y90    DUTdata/colorOut_reg[1]_rep/C
+Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y115   VGA/video_mem/ram_reg_11904_11967_0_2/RAMA/CLK
+Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y115   VGA/video_mem/ram_reg_11904_11967_0_2/RAMB/CLK
+Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y115   VGA/video_mem/ram_reg_11904_11967_0_2/RAMC/CLK
+Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y115   VGA/video_mem/ram_reg_11904_11967_0_2/RAMD/CLK
+Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X6Y73     VGA/video_mem/ram_reg_2560_2623_0_2/RAMC/CLK
+Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X6Y73     VGA/video_mem/ram_reg_2560_2623_0_2/RAMD/CLK
+Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y116   VGA/video_mem/ram_reg_9216_9279_0_2/RAMA/CLK
+Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y116   VGA/video_mem/ram_reg_9216_9279_0_2/RAMB/CLK
+Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y93    VGA/video_mem/ram_reg_5312_5375_0_2/RAMA/CLK
+Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y93    VGA/video_mem/ram_reg_5312_5375_0_2/RAMB/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X8Y99     VGA/video_mem/ram_reg_14464_14527_0_2/RAMC/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X8Y99     VGA/video_mem/ram_reg_14464_14527_0_2/RAMD/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X12Y98    VGA/video_mem/ram_reg_15872_15935_0_2/RAMA/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X12Y98    VGA/video_mem/ram_reg_15872_15935_0_2/RAMB/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X12Y98    VGA/video_mem/ram_reg_15872_15935_0_2/RAMC/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X12Y98    VGA/video_mem/ram_reg_15872_15935_0_2/RAMD/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X6Y84     VGA/video_mem/ram_reg_3904_3967_0_2/RAMA/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X6Y84     VGA/video_mem/ram_reg_3904_3967_0_2/RAMB/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X6Y84     VGA/video_mem/ram_reg_3904_3967_0_2/RAMC/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X10Y98    VGA/video_mem/ram_reg_14656_14719_0_2/RAMA/CLK
 
 
 
