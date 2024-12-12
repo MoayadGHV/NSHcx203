@@ -1,0 +1,16 @@
+0.6
+2019.1
+May 24 2019
+14:51:52
+/home/nsh1/k2UARTProject/k2UARTProject.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+/home/nsh1/k2UARTProject/k2UARTProject.srcs/sim_1/new/tb_k2.sv,1734033665,systemVerilog,,,,tb_k2,,,,,,,,
+/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/ALU.sv,1734032606,systemVerilog,,/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/Decoder.sv,,ALU,,,,,,,,
+/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/Decoder.sv,1734032606,systemVerilog,,/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/RDff.sv,,Decoder,,,,,,,,
+/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/RDff.sv,1734032606,systemVerilog,,/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/k2_processor.sv,,RDff,,,,,,,,
+/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/k2_processor.sv,1734035149,systemVerilog,,/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/memory.sv,,k2_processor,,,,,,,,
+/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/memory.sv,1734034757,systemVerilog,,/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/mux2s.sv,,memory,,,,,,,,
+/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/mux2s.sv,1734034058,systemVerilog,,/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/programcounter.sv,,mux2s,,,,,,,,
+/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/programcounter.sv,1734034886,systemVerilog,,/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/register.sv,,programcounter,,,,,,,,
+/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/register.sv,1734032606,systemVerilog,,/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/romAddedInst.sv,,register,,,,,,,,
+/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/imports/k2/romAddedInst.sv,1734034422,systemVerilog,,/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/new/top.sv,,romAddedInst,,,,,,,,
+/home/nsh1/k2UARTProject/k2UARTProject.srcs/sources_1/new/top.sv,1734034540,systemVerilog,,/home/nsh1/k2UARTProject/k2UARTProject.srcs/sim_1/new/tb_k2.sv,,top,,,,,,,,
